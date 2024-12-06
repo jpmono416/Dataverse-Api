@@ -41,8 +41,7 @@ public static class Demo
         var retrievedAccount = EarlyBoundDataverseApiService.GetEntityById<Account>(accountId);
         
         // Update
-        EarlyBoundDataverseApiService.UpdateEntity( retrievedAccount,
-            EarlyBoundDataverseApiService.UpdateAccountAction);
+        EarlyBoundDataverseApiService.UpdateEntity(retrievedAccount, UpdateDemoAccount);
         
         return accountId;
     }
@@ -59,7 +58,7 @@ public static class Demo
         
         var contactId = EarlyBoundDataverseApiService.CreateEntity(Constants.DemoData.DemoContact);
         var retrievedContact = EarlyBoundDataverseApiService.GetEntityById<Contact>(contactId);
-        EarlyBoundDataverseApiService.UpdateEntity( retrievedContact, EarlyBoundDataverseApiService.UpdateContactAction);
+        EarlyBoundDataverseApiService.UpdateEntity(retrievedContact, UpdateDemoContact);
         
         return contactId;
     }
@@ -78,7 +77,7 @@ public static class Demo
         
         var incidentId = EarlyBoundDataverseApiService.CreateEntity(Constants.DemoData.DemoCase);
         var retrievedIncident = EarlyBoundDataverseApiService.GetEntityById<Incident>(incidentId);
-        EarlyBoundDataverseApiService.UpdateEntity( retrievedIncident, EarlyBoundDataverseApiService.UpdateCaseAction);
+        EarlyBoundDataverseApiService.UpdateEntity(retrievedIncident, UpdateDemoCase);
 
         return incidentId;
     }
@@ -95,4 +94,23 @@ public static class Demo
         EarlyBoundDataverseApiService.DeleteEntity<Contact>(contactId);
         EarlyBoundDataverseApiService.DeleteEntity<Account>(accountId);
     }
+    
+    /// <summary>
+    /// Updates an account entity by changing its telephone number.
+    /// </summary>
+    /// <param name="account">The account entity to update.</param>
+    private static void UpdateDemoAccount(Account account) => account.Telephone1 = "098-765-4321";
+
+    /// <summary>
+    /// Updates a contact entity by changing its telephone number.
+    /// </summary>
+    /// <param name="contact">The contact entity to update.</param>
+    private static void UpdateDemoContact(Contact contact) => contact.Telephone1 = "098-765-4321";
+
+    /// <summary>
+    /// Updates a case entity by changing its incident stage code.
+    /// </summary>
+    /// <param name="incident">The case (incident) entity to update.</param>
+    private static void UpdateDemoCase(Incident incident) => incident.IncidentStageCode = incident_incidentstagecode.DefaultValue;
+
 }

@@ -22,30 +22,12 @@ public static class EarlyBoundDataverseApiService
          """);
     
     /// <summary>
-    /// Updates an account entity by changing its telephone number.
-    /// </summary>
-    /// <param name="account">The account entity to update.</param>
-    public static void UpdateAccountAction(Account account) => account.Telephone1 = "098-765-4321";
-
-    /// <summary>
-    /// Updates a contact entity by changing its telephone number.
-    /// </summary>
-    /// <param name="contact">The contact entity to update.</param>
-    public static void UpdateContactAction(Contact contact) => contact.Telephone1 = "098-765-4321";
-
-    /// <summary>
-    /// Updates a case entity by changing its incident stage code.
-    /// </summary>
-    /// <param name="incident">The case (incident) entity to update.</param>
-    public static void UpdateCaseAction(Incident incident) => incident.IncidentStageCode = incident_incidentstagecode.DefaultValue;
-
-    /// <summary>
     /// Creates a new entity of the specified type in Dataverse.
     /// </summary>
     /// <typeparam name="T">The type of the entity to create. Must inherit from <see cref="Entity"/>.</typeparam>
     /// <param name="entity">The entity to create.</param>
     /// <returns>The unique identifier (ID) of the created entity.</returns>
-    public static Guid CreateEntity<T>( T entity) where T : Entity => Service.Create(entity);
+    public static Guid CreateEntity<T>(T entity) where T : Entity => Service.Create(entity);
 
     /// <summary>
     /// Retrieves an entity by its ID from Dataverse.
@@ -53,7 +35,7 @@ public static class EarlyBoundDataverseApiService
     /// <typeparam name="T">The type of the entity to retrieve. Must inherit from <see cref="Entity"/>.</typeparam>
     /// <param name="entityId">The unique identifier (ID) of the entity to retrieve.</param>
     /// <returns>The retrieved entity, cast to the specified type.</returns>
-    public static T GetEntityById<T>( Guid entityId) where T : Entity => 
+    public static T GetEntityById<T>(Guid entityId) where T : Entity => 
         Service.Retrieve(typeof(T).Name.ToLower(), entityId, new ColumnSet(true)).ToEntity<T>();
 
     /// <summary>
@@ -62,7 +44,7 @@ public static class EarlyBoundDataverseApiService
     /// <typeparam name="T">The type of the entity to update. Must inherit from <see cref="Entity"/>.</typeparam>
     /// <param name="entity">The entity to update.</param>
     /// <param name="updateAction">The action to perform updates on the entity.</param>
-    public static void UpdateEntity<T>( T entity, Action<T> updateAction) where T : Entity
+    public static void UpdateEntity<T>(T entity, Action<T> updateAction) where T : Entity
     {
         updateAction(entity); // Apply specific updates via the delegate
         Service.Update(entity);
@@ -73,6 +55,6 @@ public static class EarlyBoundDataverseApiService
     /// </summary>
     /// <typeparam name="T">The type of the entity to delete. Must inherit from <see cref="Entity"/>.</typeparam>
     /// <param name="entityId">The unique identifier (ID) of the entity to delete.</param>
-    public static void DeleteEntity<T>( Guid entityId) where T : Entity => Service.Delete(typeof(T).Name.ToLower(), entityId);
+    public static void DeleteEntity<T>(Guid entityId) where T : Entity => Service.Delete(typeof(T).Name.ToLower(), entityId);
 
 }

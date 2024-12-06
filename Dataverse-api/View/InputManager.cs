@@ -82,6 +82,7 @@ public static class InputManager
             Guid? id = parts.Length == 3 && Guid.TryParse(parts[2], out var parsedId) ? parsedId : null;
 
             // Map the action and entity inputs to constants
+            // TODO use the new property All of each class to validate the input
             if (!ValidActions.TryGetValue(actionInput, out var action))
             {
                 Logger.Log(Constants.Messages.InvalidAction);
