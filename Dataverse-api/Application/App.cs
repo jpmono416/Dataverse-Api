@@ -1,6 +1,5 @@
-﻿using Dataverse_api.Entities;
-using Dataverse_api.Service;
-using Microsoft.Xrm.Sdk;
+﻿using Dataverse_api.Util;
+using Dataverse_api.View;
 
 namespace Dataverse_api.Application;
 
@@ -8,78 +7,96 @@ public static class App
 {
     public static void Run()
     {
+        Logger.Log(Constants.Messages.WelcomeMessage);
         try
         {
-            // TODO log IDs as they are created
-            // Create, Read, Update Account, Contact, Case
-            var accountId = PerformDemoAccountOperations();
-            var contactId = PerformDemoContactOperations(accountId);
-            var incidentId = PerformDemoCaseOperations(accountId, contactId);
-
-            PerformDemoCleanup(incidentId, contactId, accountId);
+            // Run demo
+            Demo.RunDemo();
+            
+            if (!InputManager.StartManualInput()) return;
+            
+            // Run manual input
+            MainAppLoop();
         }
-        catch (Exception ex) { Console.WriteLine($"Error: {ex.Message}"); }
+        catch (Exception e) { Logger.LogError(e); }
     }
 
-    private static Guid PerformDemoAccountOperations()
+    private static void MainAppLoop()
     {
-        var account = new Account
+        Logger.Log(Constants.Messages.HelpMessage);
+        // 
+        while (true)
         {
-            Name = "Acme Corporation",
-            EMailAddress1 = "contact@acme.com",
-            Telephone1 = "123-456-7890"
-        };
-        // Create
-        var accountId = EarlyBoundDataverseApiService.CreateEntity(account);
-        
-        // Retrieve
-        var retrievedAccount = EarlyBoundDataverseApiService.GetEntityById<Account>(accountId);
-        
-        // Update
-        EarlyBoundDataverseApiService.UpdateEntity( retrievedAccount,
-            EarlyBoundDataverseApiService.UpdateAccountAction);
-        
-        return accountId;
-    }
-
-    private static Guid PerformDemoContactOperations(Guid accountId)
-    {
-        var contact = new Contact
-        {
-            FirstName = "John",
-            LastName = "Doe",
-            EMailAddress1 = "john.doe@acme.com",
-            ParentCustomerId = new EntityReference(Account.EntityLogicalName, accountId)
-        };
-        var contactId = EarlyBoundDataverseApiService.CreateEntity(contact);
-        var retrievedContact = EarlyBoundDataverseApiService.GetEntityById<Contact>(contactId);
-        EarlyBoundDataverseApiService.UpdateEntity( retrievedContact, EarlyBoundDataverseApiService.UpdateContactAction);
-        
-        return contactId;
-    }
-
-    private static Guid PerformDemoCaseOperations(Guid accountId, Guid contactId)
-    {
-        var incident = new Incident
-        {
-            Title = "Billing Issue",
-            Description = "Customer disputes invoice amount.",
-            CustomerId = new EntityReference(Account.EntityLogicalName, accountId),
-            PrimaryContactId = new EntityReference(Contact.EntityLogicalName, contactId)
-        };
-        var incidentId = EarlyBoundDataverseApiService.CreateEntity(incident);
-        var retrievedIncident = EarlyBoundDataverseApiService.GetEntityById<Incident>(incidentId);
-        EarlyBoundDataverseApiService.UpdateEntity( retrievedIncident, EarlyBoundDataverseApiService.UpdateCaseAction);
-
-        return incidentId;
+            var command = InputManager.ListenForCommand();
+            ProcessCommand(command);
+        }
+        // ReSharper disable once FunctionNeverReturns : The 'exit' command will close the app and terminate this loop
     }
     
-    private static void PerformDemoCleanup(Guid incidentId, Guid contactId, Guid accountId)
+    private static void ProcessCommand(Command command)
     {
-        EarlyBoundDataverseApiService.DeleteEntity<Incident>(incidentId);
-        EarlyBoundDataverseApiService.DeleteEntity<Contact>(contactId);
-        EarlyBoundDataverseApiService.DeleteEntity<Account>(accountId);
-        
-        Console.WriteLine("All entities cleaned up.");
+        switch (command.Action)
+        {
+            case Constants.Actions.Create:
+                Logger.Log($"Creating {command.Entity}...");
+                // TODO Call EarlyBoundDataverseApiService.CreateEntity<T> based on entity
+                break;
+
+            case Constants.Actions.Get:
+                if (!command.Id.HasValue)
+                {
+                    Logger.Log(Constants.Messages.CommandRequiresId);
+                    return;
+                }
+                Logger.Log($"Retrieving {command.Entity} with ID {command.Id}...");
+                // TODO Call EarlyBoundDataverseApiService.GetEntityById<T>
+
+                break;
+            
+            case Constants.Actions.List:
+                Logger.Log($"Retrieving all {command.Entity}s...");
+                // TODO Implement logic to retrieve all entities
+                break;
+
+
+            case Constants.Actions.Update:
+                if (!command.Id.HasValue)
+                {
+                    Logger.Log(Constants.Messages.CommandRequiresId);
+                    return;
+                }
+                Logger.Log($"Updating {command.Entity} with ID {command.Id}...");
+                // TODO Call EarlyBoundDataverseApiService.UpdateEntity<T> with ID and action
+                break;
+
+            case Constants.Actions.Delete:
+                if (!command.Id.HasValue)
+                {
+                    Logger.Log(Constants.Messages.CommandRequiresId);
+                    return;
+                }
+                Logger.Log($"Deleting {command.Entity} with ID {command.Id}...");
+                // TODO Call EarlyBoundDataverseApiService.DeleteEntity<T>
+                break;
+
+            case Constants.Actions.Help:
+                Logger.Log(Constants.Messages.HelpMessage);
+                break;
+
+            case Constants.Actions.Cleanup:
+                Logger.Log(Constants.Messages.CleanupMessage);
+                // TODO Implement logic to delete all created entities
+                break;
+            
+            case Constants.Actions.Exit:
+                Logger.Log(Constants.Messages.GoodbyeMessage);
+                // TODO call cleanup method
+                Environment.Exit(0);
+                break;
+
+            default:
+                Logger.Log(Constants.Messages.InvalidAction);
+                break;
+        }
     }
 }
