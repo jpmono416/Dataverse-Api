@@ -1,7 +1,9 @@
-﻿using Microsoft.Crm.Sdk.Messages;
+﻿using Dataverse_api.Entities;
+using Dataverse_api.Util;
 using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Query;
 
-namespace Dataverse_api;
+namespace Dataverse_api.Service;
 
 /// <summary>
 /// Class to interact with the Dataverse API for managing Accounts, Contacts, and Cases.
@@ -9,8 +11,16 @@ namespace Dataverse_api;
 /// It is the main class for interacting with the Dataverse API.
 /// It makes use of templating to allow for the flexible creation, retrieval, updating, and deletion of entities.
 /// </summary>
-public static class EarlyBoundDataverseApi
+public static class EarlyBoundDataverseApiService
 {
+    private static readonly IOrganizationService Service = Utils.GetOrganizationService($"""
+         AuthType=ClientSecret;
+         SkipDiscovery=true;url={Utils.GetFromEnv("SCOPE")};
+         Secret={Utils.GetFromEnv("SECRET_ID")};
+         ClientId={Utils.GetFromEnv("APP_ID")};
+         RequireNewInstance=true
+         """);
+    
     /// <summary>
     /// Updates an account entity by changing its telephone number.
     /// </summary>
@@ -33,75 +43,36 @@ public static class EarlyBoundDataverseApi
     /// Creates a new entity of the specified type in Dataverse.
     /// </summary>
     /// <typeparam name="T">The type of the entity to create. Must inherit from <see cref="Entity"/>.</typeparam>
-    /// <param name="service">The organization service used to create the entity.</param>
     /// <param name="entity">The entity to create.</param>
     /// <returns>The unique identifier (ID) of the created entity.</returns>
-    public static Guid CreateEntity<T>(IOrganizationService service, T entity) where T : Entity
-    {
-        Guid entityId = service.Create(entity);
-        Console.WriteLine($"{typeof(T).Name} created with ID: {entityId}");
-        return entityId;
-    }
+    public static Guid CreateEntity<T>( T entity) where T : Entity => Service.Create(entity);
 
     /// <summary>
     /// Retrieves an entity by its ID from Dataverse.
     /// </summary>
     /// <typeparam name="T">The type of the entity to retrieve. Must inherit from <see cref="Entity"/>.</typeparam>
-    /// <param name="service">The organization service used to retrieve the entity.</param>
     /// <param name="entityId">The unique identifier (ID) of the entity to retrieve.</param>
     /// <returns>The retrieved entity, cast to the specified type.</returns>
-    public static T GetEntityById<T>(IOrganizationService service, Guid entityId) where T : Entity
-    {
-        var entity = service.Retrieve(typeof(T).Name.ToLower(), entityId, new Microsoft.Xrm.Sdk.Query.ColumnSet(true));
-        var typedEntity = entity.ToEntity<T>();
-        Console.WriteLine($"Retrieved {typeof(T).Name}: {typedEntity.Id}");
-        return typedEntity;
-    }
+    public static T GetEntityById<T>( Guid entityId) where T : Entity => 
+        Service.Retrieve(typeof(T).Name.ToLower(), entityId, new ColumnSet(true)).ToEntity<T>();
 
     /// <summary>
     /// Updates an existing entity in Dataverse using a custom update action.
     /// </summary>
     /// <typeparam name="T">The type of the entity to update. Must inherit from <see cref="Entity"/>.</typeparam>
-    /// <param name="service">The organization service used to update the entity.</param>
     /// <param name="entity">The entity to update.</param>
     /// <param name="updateAction">The action to perform updates on the entity.</param>
-    public static void UpdateEntity<T>(IOrganizationService service, T entity, Action<T> updateAction) where T : Entity
+    public static void UpdateEntity<T>( T entity, Action<T> updateAction) where T : Entity
     {
         updateAction(entity); // Apply specific updates via the delegate
-        service.Update(entity);
-        Console.WriteLine($"{typeof(T).Name} updated successfully.");
+        Service.Update(entity);
     }
 
     /// <summary>
     /// Deletes an entity from Dataverse by its ID.
     /// </summary>
     /// <typeparam name="T">The type of the entity to delete. Must inherit from <see cref="Entity"/>.</typeparam>
-    /// <param name="service">The organization service used to delete the entity.</param>
     /// <param name="entityId">The unique identifier (ID) of the entity to delete.</param>
-    public static void DeleteEntity<T>(IOrganizationService service, Guid entityId) where T : Entity
-    {
-        service.Delete(typeof(T).Name.ToLower(), entityId);
-        try
-        {
-            GetEntityById<T>(service, entityId);
-        }
-        catch (Exception)
-        {
-            Console.WriteLine($"{typeof(T).Name} deleted with ID: {entityId}");
-        }
-    }
+    public static void DeleteEntity<T>( Guid entityId) where T : Entity => Service.Delete(typeof(T).Name.ToLower(), entityId);
 
-    /// <summary>
-    /// Retrieves the user ID of the currently authenticated user.
-    /// </summary>
-    /// <param name="service">The organization service used to query the user ID.</param>
-    /// <returns>The user ID as a string.</returns>
-    public static string GetUserId(IOrganizationService service)
-    {
-        var response = (WhoAmIResponse)service.Execute(new WhoAmIRequest());
-
-        Console.WriteLine($"User ID is {response.Results.Keys}.");
-
-        return response.UserId.ToString();
-    }
 }

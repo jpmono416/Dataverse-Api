@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Dataverse_api
+namespace Dataverse_api.Entities
 {
 	
 	
@@ -3318,16 +3318,16 @@ namespace Dataverse_api
 		/// 1:N account_master_account
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("account_master_account", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
-		public System.Collections.Generic.IEnumerable<Dataverse_api.Account> Referencedaccount_master_account
+		public System.Collections.Generic.IEnumerable<Account> Referencedaccount_master_account
 		{
 			get
 			{
-				return this.GetRelatedEntities<Dataverse_api.Account>("account_master_account", Microsoft.Xrm.Sdk.EntityRole.Referenced);
+				return this.GetRelatedEntities<Account>("account_master_account", Microsoft.Xrm.Sdk.EntityRole.Referenced);
 			}
 			set
 			{
 				this.OnPropertyChanging("Referencedaccount_master_account");
-				this.SetRelatedEntities<Dataverse_api.Account>("account_master_account", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
+				this.SetRelatedEntities<Account>("account_master_account", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
 				this.OnPropertyChanged("Referencedaccount_master_account");
 			}
 		}
@@ -3336,16 +3336,16 @@ namespace Dataverse_api
 		/// 1:N account_parent_account
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("account_parent_account", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
-		public System.Collections.Generic.IEnumerable<Dataverse_api.Account> Referencedaccount_parent_account
+		public System.Collections.Generic.IEnumerable<Account> Referencedaccount_parent_account
 		{
 			get
 			{
-				return this.GetRelatedEntities<Dataverse_api.Account>("account_parent_account", Microsoft.Xrm.Sdk.EntityRole.Referenced);
+				return this.GetRelatedEntities<Account>("account_parent_account", Microsoft.Xrm.Sdk.EntityRole.Referenced);
 			}
 			set
 			{
 				this.OnPropertyChanging("Referencedaccount_parent_account");
-				this.SetRelatedEntities<Dataverse_api.Account>("account_parent_account", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
+				this.SetRelatedEntities<Account>("account_parent_account", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
 				this.OnPropertyChanged("Referencedaccount_parent_account");
 			}
 		}
@@ -3354,16 +3354,16 @@ namespace Dataverse_api
 		/// 1:N contact_customer_accounts
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_customer_accounts")]
-		public System.Collections.Generic.IEnumerable<Dataverse_api.Contact> contact_customer_accounts
+		public System.Collections.Generic.IEnumerable<Contact> contact_customer_accounts
 		{
 			get
 			{
-				return this.GetRelatedEntities<Dataverse_api.Contact>("contact_customer_accounts", null);
+				return this.GetRelatedEntities<Contact>("contact_customer_accounts", null);
 			}
 			set
 			{
 				this.OnPropertyChanging("contact_customer_accounts");
-				this.SetRelatedEntities<Dataverse_api.Contact>("contact_customer_accounts", null, value);
+				this.SetRelatedEntities<Contact>("contact_customer_accounts", null, value);
 				this.OnPropertyChanged("contact_customer_accounts");
 			}
 		}
@@ -3372,16 +3372,16 @@ namespace Dataverse_api
 		/// 1:N incident_customer_accounts
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incident_customer_accounts")]
-		public System.Collections.Generic.IEnumerable<Dataverse_api.Incident> incident_customer_accounts
+		public System.Collections.Generic.IEnumerable<Incident> incident_customer_accounts
 		{
 			get
 			{
-				return this.GetRelatedEntities<Dataverse_api.Incident>("incident_customer_accounts", null);
+				return this.GetRelatedEntities<Incident>("incident_customer_accounts", null);
 			}
 			set
 			{
 				this.OnPropertyChanging("incident_customer_accounts");
-				this.SetRelatedEntities<Dataverse_api.Incident>("incident_customer_accounts", null, value);
+				this.SetRelatedEntities<Incident>("incident_customer_accounts", null, value);
 				this.OnPropertyChanged("incident_customer_accounts");
 			}
 		}
@@ -3390,16 +3390,16 @@ namespace Dataverse_api
 		/// 1:N msa_account_managingpartner
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msa_account_managingpartner", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
-		public System.Collections.Generic.IEnumerable<Dataverse_api.Account> Referencedmsa_account_managingpartner
+		public System.Collections.Generic.IEnumerable<Account> Referencedmsa_account_managingpartner
 		{
 			get
 			{
-				return this.GetRelatedEntities<Dataverse_api.Account>("msa_account_managingpartner", Microsoft.Xrm.Sdk.EntityRole.Referenced);
+				return this.GetRelatedEntities<Account>("msa_account_managingpartner", Microsoft.Xrm.Sdk.EntityRole.Referenced);
 			}
 			set
 			{
 				this.OnPropertyChanging("Referencedmsa_account_managingpartner");
-				this.SetRelatedEntities<Dataverse_api.Account>("msa_account_managingpartner", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
+				this.SetRelatedEntities<Account>("msa_account_managingpartner", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
 				this.OnPropertyChanged("Referencedmsa_account_managingpartner");
 			}
 		}
@@ -3408,16 +3408,16 @@ namespace Dataverse_api
 		/// 1:N msa_contact_managingpartner
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msa_contact_managingpartner")]
-		public System.Collections.Generic.IEnumerable<Dataverse_api.Contact> msa_contact_managingpartner
+		public System.Collections.Generic.IEnumerable<Contact> msa_contact_managingpartner
 		{
 			get
 			{
-				return this.GetRelatedEntities<Dataverse_api.Contact>("msa_contact_managingpartner", null);
+				return this.GetRelatedEntities<Contact>("msa_contact_managingpartner", null);
 			}
 			set
 			{
 				this.OnPropertyChanging("msa_contact_managingpartner");
-				this.SetRelatedEntities<Dataverse_api.Contact>("msa_contact_managingpartner", null, value);
+				this.SetRelatedEntities<Contact>("msa_contact_managingpartner", null, value);
 				this.OnPropertyChanged("msa_contact_managingpartner");
 			}
 		}
@@ -3427,11 +3427,11 @@ namespace Dataverse_api
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("masterid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("account_master_account", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
-		public Dataverse_api.Account Referencingaccount_master_account
+		public Account Referencingaccount_master_account
 		{
 			get
 			{
-				return this.GetRelatedEntity<Dataverse_api.Account>("account_master_account", Microsoft.Xrm.Sdk.EntityRole.Referencing);
+				return this.GetRelatedEntity<Account>("account_master_account", Microsoft.Xrm.Sdk.EntityRole.Referencing);
 			}
 		}
 		
@@ -3440,16 +3440,16 @@ namespace Dataverse_api
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentaccountid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("account_parent_account", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
-		public Dataverse_api.Account Referencingaccount_parent_account
+		public Account Referencingaccount_parent_account
 		{
 			get
 			{
-				return this.GetRelatedEntity<Dataverse_api.Account>("account_parent_account", Microsoft.Xrm.Sdk.EntityRole.Referencing);
+				return this.GetRelatedEntity<Account>("account_parent_account", Microsoft.Xrm.Sdk.EntityRole.Referencing);
 			}
 			set
 			{
 				this.OnPropertyChanging("Referencingaccount_parent_account");
-				this.SetRelatedEntity<Dataverse_api.Account>("account_parent_account", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
+				this.SetRelatedEntity<Account>("account_parent_account", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
 				this.OnPropertyChanged("Referencingaccount_parent_account");
 			}
 		}
@@ -3459,16 +3459,16 @@ namespace Dataverse_api
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("primarycontactid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("account_primary_contact")]
-		public Dataverse_api.Contact account_primary_contact
+		public Contact account_primary_contact
 		{
 			get
 			{
-				return this.GetRelatedEntity<Dataverse_api.Contact>("account_primary_contact", null);
+				return this.GetRelatedEntity<Contact>("account_primary_contact", null);
 			}
 			set
 			{
 				this.OnPropertyChanging("account_primary_contact");
-				this.SetRelatedEntity<Dataverse_api.Contact>("account_primary_contact", null, value);
+				this.SetRelatedEntity<Contact>("account_primary_contact", null, value);
 				this.OnPropertyChanged("account_primary_contact");
 			}
 		}
@@ -3478,16 +3478,16 @@ namespace Dataverse_api
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msa_managingpartnerid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msa_account_managingpartner", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
-		public Dataverse_api.Account Referencingmsa_account_managingpartner
+		public Account Referencingmsa_account_managingpartner
 		{
 			get
 			{
-				return this.GetRelatedEntity<Dataverse_api.Account>("msa_account_managingpartner", Microsoft.Xrm.Sdk.EntityRole.Referencing);
+				return this.GetRelatedEntity<Account>("msa_account_managingpartner", Microsoft.Xrm.Sdk.EntityRole.Referencing);
 			}
 			set
 			{
 				this.OnPropertyChanging("Referencingmsa_account_managingpartner");
-				this.SetRelatedEntity<Dataverse_api.Account>("msa_account_managingpartner", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
+				this.SetRelatedEntity<Account>("msa_account_managingpartner", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
 				this.OnPropertyChanged("Referencingmsa_account_managingpartner");
 			}
 		}

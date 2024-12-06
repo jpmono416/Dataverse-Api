@@ -1,9 +1,10 @@
 ﻿using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using Microsoft.PowerPlatform.Dataverse.Client;
 using Microsoft.Xrm.Sdk;
 
-namespace Dataverse_api;
+namespace Dataverse_api.Util;
 
 /// <summary>
 /// Utility class containing helper methods for interacting with Dataverse and handling common tasks such as authentication, environment variable loading, and JSON manipulation.
@@ -18,22 +19,32 @@ public static class Utils
         /// <summary>
         /// The type of token returned (e.g., "Bearer").
         /// </summary>
+        [JsonPropertyName("token_type")]
         public string TokenType { get; init; }
 
         /// <summary>
         /// The number of seconds before the token expires.
         /// </summary>
+        [JsonPropertyName("expires_in")]
         public int ExpiresIn { get; init; }
 
         /// <summary>
         /// The number of seconds before the token's extended expiration.
         /// </summary>
+        [JsonPropertyName("ext_expires_in")]
         public int ExtExpiresIn { get; init; }
 
         /// <summary>
         /// The access token to use for authentication.
         /// </summary>
+        [JsonPropertyName("access_token")]
         public string AccessToken { get; init; }
+        
+        /// <summary>
+        /// The scope of access (environment URL) granted by the token.
+        /// </summary>
+        [JsonPropertyName("scope")]
+        public string Scope { get; init; }
     }
 
     /// <summary>

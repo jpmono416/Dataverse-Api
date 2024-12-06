@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Dataverse_api
+namespace Dataverse_api.Entities.OptionSets
 {
 	
 	
