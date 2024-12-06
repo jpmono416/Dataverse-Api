@@ -239,17 +239,17 @@ namespace Dataverse_api.Entities
 		
 		private void OnPropertyChanged(string propertyName)
 		{
-			if ((this.PropertyChanged != null))
+			if ((PropertyChanged != null))
 			{
-				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+				PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
 			}
 		}
 		
 		private void OnPropertyChanging(string propertyName)
 		{
-			if ((this.PropertyChanging != null))
+			if ((PropertyChanging != null))
 			{
-				this.PropertyChanging(this, new System.ComponentModel.PropertyChangingEventArgs(propertyName));
+				PropertyChanging(this, new System.ComponentModel.PropertyChangingEventArgs(propertyName));
 			}
 		}
 		
@@ -261,7 +261,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("accountid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("accountid");
 			}
 		}
 		
@@ -269,17 +269,17 @@ namespace Dataverse_api.Entities
 		/// This attribute is used for Sample Service Business Processes.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activitiescomplete")]
-		public System.Nullable<bool> ActivitiesComplete
+		public Nullable<bool> ActivitiesComplete
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("activitiescomplete");
+				return GetAttributeValue<Nullable<bool>>("activitiescomplete");
 			}
 			set
 			{
-				this.OnPropertyChanging("ActivitiesComplete");
-				this.SetAttributeValue("activitiescomplete", value);
-				this.OnPropertyChanged("ActivitiesComplete");
+				OnPropertyChanging("ActivitiesComplete");
+				SetAttributeValue("activitiescomplete", value);
+				OnPropertyChanged("ActivitiesComplete");
 			}
 		}
 		
@@ -287,17 +287,17 @@ namespace Dataverse_api.Entities
 		/// Type the number of service units that were actually required to resolve the case.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("actualserviceunits")]
-		public System.Nullable<int> ActualServiceUnits
+		public Nullable<int> ActualServiceUnits
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("actualserviceunits");
+				return GetAttributeValue<Nullable<int>>("actualserviceunits");
 			}
 			set
 			{
-				this.OnPropertyChanging("ActualServiceUnits");
-				this.SetAttributeValue("actualserviceunits", value);
-				this.OnPropertyChanged("ActualServiceUnits");
+				OnPropertyChanging("ActualServiceUnits");
+				SetAttributeValue("actualserviceunits", value);
+				OnPropertyChanged("ActualServiceUnits");
 			}
 		}
 		
@@ -305,17 +305,17 @@ namespace Dataverse_api.Entities
 		/// Type the number of service units that were billed to the customer for the case.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("billedserviceunits")]
-		public System.Nullable<int> BilledServiceUnits
+		public Nullable<int> BilledServiceUnits
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("billedserviceunits");
+				return GetAttributeValue<Nullable<int>>("billedserviceunits");
 			}
 			set
 			{
-				this.OnPropertyChanging("BilledServiceUnits");
-				this.SetAttributeValue("billedserviceunits", value);
-				this.OnPropertyChanged("BilledServiceUnits");
+				OnPropertyChanging("BilledServiceUnits");
+				SetAttributeValue("billedserviceunits", value);
+				OnPropertyChanged("BilledServiceUnits");
 			}
 		}
 		
@@ -323,17 +323,17 @@ namespace Dataverse_api.Entities
 		/// Details whether the profile is blocked or not.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("blockedprofile")]
-		public System.Nullable<bool> BlockedProfile
+		public Nullable<bool> BlockedProfile
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("blockedprofile");
+				return GetAttributeValue<Nullable<bool>>("blockedprofile");
 			}
 			set
 			{
-				this.OnPropertyChanging("BlockedProfile");
-				this.SetAttributeValue("blockedprofile", value);
-				this.OnPropertyChanged("BlockedProfile");
+				OnPropertyChanging("BlockedProfile");
+				SetAttributeValue("blockedprofile", value);
+				OnPropertyChanged("BlockedProfile");
 			}
 		}
 		
@@ -345,7 +345,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("caseage");
+				return GetAttributeValue<string>("caseage");
 			}
 		}
 		
@@ -361,9 +361,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("CaseOriginCode");
-				this.SetAttributeValue("caseorigincode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("CaseOriginCode");
+				OnPropertyChanging("CaseOriginCode");
+				SetAttributeValue("caseorigincode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("CaseOriginCode");
 			}
 		}
 		
@@ -379,9 +379,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("CaseTypeCode");
-				this.SetAttributeValue("casetypecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("CaseTypeCode");
+				OnPropertyChanging("CaseTypeCode");
+				SetAttributeValue("casetypecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("CaseTypeCode");
 			}
 		}
 		
@@ -389,17 +389,17 @@ namespace Dataverse_api.Entities
 		/// This attribute is used for Sample Service Business Processes.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("checkemail")]
-		public System.Nullable<bool> CheckEmail
+		public Nullable<bool> CheckEmail
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("checkemail");
+				return GetAttributeValue<Nullable<bool>>("checkemail");
 			}
 			set
 			{
-				this.OnPropertyChanging("CheckEmail");
-				this.SetAttributeValue("checkemail", value);
-				this.OnPropertyChanged("CheckEmail");
+				OnPropertyChanging("CheckEmail");
+				SetAttributeValue("checkemail", value);
+				OnPropertyChanged("CheckEmail");
 			}
 		}
 		
@@ -411,7 +411,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("contactid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("contactid");
 			}
 		}
 		
@@ -423,13 +423,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("contractdetailid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("contractdetailid");
 			}
 			set
 			{
-				this.OnPropertyChanging("ContractDetailId");
-				this.SetAttributeValue("contractdetailid", value);
-				this.OnPropertyChanged("ContractDetailId");
+				OnPropertyChanging("ContractDetailId");
+				SetAttributeValue("contractdetailid", value);
+				OnPropertyChanged("ContractDetailId");
 			}
 		}
 		
@@ -441,13 +441,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("contractid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("contractid");
 			}
 			set
 			{
-				this.OnPropertyChanging("ContractId");
-				this.SetAttributeValue("contractid", value);
-				this.OnPropertyChanged("ContractId");
+				OnPropertyChanging("ContractId");
+				SetAttributeValue("contractid", value);
+				OnPropertyChanged("ContractId");
 			}
 		}
 		
@@ -463,9 +463,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("ContractServiceLevelCode");
-				this.SetAttributeValue("contractservicelevelcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("ContractServiceLevelCode");
+				OnPropertyChanging("ContractServiceLevelCode");
+				SetAttributeValue("contractservicelevelcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("ContractServiceLevelCode");
 			}
 		}
 		
@@ -477,7 +477,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
 			}
 		}
 		
@@ -489,7 +489,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdbyexternalparty");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdbyexternalparty");
 			}
 		}
 		
@@ -497,11 +497,11 @@ namespace Dataverse_api.Entities
 		/// Date and time when the record was created.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
-		public System.Nullable<System.DateTime> CreatedOn
+		public Nullable<DateTime> CreatedOn
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
+				return GetAttributeValue<Nullable<DateTime>>("createdon");
 			}
 		}
 		
@@ -513,7 +513,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdonbehalfby");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdonbehalfby");
 			}
 		}
 		
@@ -521,17 +521,17 @@ namespace Dataverse_api.Entities
 		/// Tells whether customer service representative has contacted the customer or not.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("customercontacted")]
-		public System.Nullable<bool> CustomerContacted
+		public Nullable<bool> CustomerContacted
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("customercontacted");
+				return GetAttributeValue<Nullable<bool>>("customercontacted");
 			}
 			set
 			{
-				this.OnPropertyChanging("CustomerContacted");
-				this.SetAttributeValue("customercontacted", value);
-				this.OnPropertyChanged("CustomerContacted");
+				OnPropertyChanging("CustomerContacted");
+				SetAttributeValue("customercontacted", value);
+				OnPropertyChanged("CustomerContacted");
 			}
 		}
 		
@@ -543,13 +543,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("customerid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("customerid");
 			}
 			set
 			{
-				this.OnPropertyChanging("CustomerId");
-				this.SetAttributeValue("customerid", value);
-				this.OnPropertyChanged("CustomerId");
+				OnPropertyChanging("CustomerId");
+				SetAttributeValue("customerid", value);
+				OnPropertyChanged("CustomerId");
 			}
 		}
 		
@@ -565,9 +565,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("CustomerSatisfactionCode");
-				this.SetAttributeValue("customersatisfactioncode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("CustomerSatisfactionCode");
+				OnPropertyChanging("CustomerSatisfactionCode");
+				SetAttributeValue("customersatisfactioncode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("CustomerSatisfactionCode");
 			}
 		}
 		
@@ -575,17 +575,17 @@ namespace Dataverse_api.Entities
 		/// Shows the date time when the Case was resolved.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("deactivatedon")]
-		public System.Nullable<System.DateTime> deactivatedon
+		public Nullable<DateTime> deactivatedon
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.DateTime>>("deactivatedon");
+				return GetAttributeValue<Nullable<DateTime>>("deactivatedon");
 			}
 			set
 			{
-				this.OnPropertyChanging("deactivatedon");
-				this.SetAttributeValue("deactivatedon", value);
-				this.OnPropertyChanged("deactivatedon");
+				OnPropertyChanging("deactivatedon");
+				SetAttributeValue("deactivatedon", value);
+				OnPropertyChanged("deactivatedon");
 			}
 		}
 		
@@ -593,17 +593,17 @@ namespace Dataverse_api.Entities
 		/// Shows whether terms of the associated entitlement should be decremented or not.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("decremententitlementterm")]
-		public System.Nullable<bool> DecrementEntitlementTerm
+		public Nullable<bool> DecrementEntitlementTerm
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("decremententitlementterm");
+				return GetAttributeValue<Nullable<bool>>("decremententitlementterm");
 			}
 			set
 			{
-				this.OnPropertyChanging("DecrementEntitlementTerm");
-				this.SetAttributeValue("decremententitlementterm", value);
-				this.OnPropertyChanged("DecrementEntitlementTerm");
+				OnPropertyChanging("DecrementEntitlementTerm");
+				SetAttributeValue("decremententitlementterm", value);
+				OnPropertyChanged("DecrementEntitlementTerm");
 			}
 		}
 		
@@ -615,13 +615,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("description");
+				return GetAttributeValue<string>("description");
 			}
 			set
 			{
-				this.OnPropertyChanging("Description");
-				this.SetAttributeValue("description", value);
-				this.OnPropertyChanged("Description");
+				OnPropertyChanging("Description");
+				SetAttributeValue("description", value);
+				OnPropertyChanged("Description");
 			}
 		}
 		
@@ -633,13 +633,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("emailaddress");
+				return GetAttributeValue<string>("emailaddress");
 			}
 			set
 			{
-				this.OnPropertyChanging("EmailAddress");
-				this.SetAttributeValue("emailaddress", value);
-				this.OnPropertyChanged("EmailAddress");
+				OnPropertyChanging("EmailAddress");
+				SetAttributeValue("emailaddress", value);
+				OnPropertyChanged("EmailAddress");
 			}
 		}
 		
@@ -651,13 +651,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("entitlementid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("entitlementid");
 			}
 			set
 			{
-				this.OnPropertyChanging("EntitlementId");
-				this.SetAttributeValue("entitlementid", value);
-				this.OnPropertyChanged("EntitlementId");
+				OnPropertyChanging("EntitlementId");
+				SetAttributeValue("entitlementid", value);
+				OnPropertyChanged("EntitlementId");
 			}
 		}
 		
@@ -669,22 +669,22 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<byte[]>("entityimage");
+				return GetAttributeValue<byte[]>("entityimage");
 			}
 			set
 			{
-				this.OnPropertyChanging("EntityImage");
-				this.SetAttributeValue("entityimage", value);
-				this.OnPropertyChanged("EntityImage");
+				OnPropertyChanging("EntityImage");
+				SetAttributeValue("entityimage", value);
+				OnPropertyChanged("EntityImage");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("entityimage_timestamp")]
-		public System.Nullable<long> EntityImage_Timestamp
+		public Nullable<long> EntityImage_Timestamp
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<long>>("entityimage_timestamp");
+				return GetAttributeValue<Nullable<long>>("entityimage_timestamp");
 			}
 		}
 		
@@ -693,16 +693,16 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("entityimage_url");
+				return GetAttributeValue<string>("entityimage_url");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("entityimageid")]
-		public System.Nullable<System.Guid> EntityImageId
+		public Nullable<Guid> EntityImageId
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("entityimageid");
+				return GetAttributeValue<Nullable<Guid>>("entityimageid");
 			}
 		}
 		
@@ -710,11 +710,11 @@ namespace Dataverse_api.Entities
 		/// Indicates the date and time when the case was escalated.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("escalatedon")]
-		public System.Nullable<System.DateTime> EscalatedOn
+		public Nullable<DateTime> EscalatedOn
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.DateTime>>("escalatedon");
+				return GetAttributeValue<Nullable<DateTime>>("escalatedon");
 			}
 		}
 		
@@ -722,11 +722,11 @@ namespace Dataverse_api.Entities
 		/// Shows the conversion rate of the record's currency. The exchange rate is used to convert all money fields in the record from the local currency to the system's default currency.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangerate")]
-		public System.Nullable<decimal> ExchangeRate
+		public Nullable<decimal> ExchangeRate
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<decimal>>("exchangerate");
+				return GetAttributeValue<Nullable<decimal>>("exchangerate");
 			}
 		}
 		
@@ -738,13 +738,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("existingcase");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("existingcase");
 			}
 			set
 			{
-				this.OnPropertyChanging("ExistingCase");
-				this.SetAttributeValue("existingcase", value);
-				this.OnPropertyChanged("ExistingCase");
+				OnPropertyChanging("ExistingCase");
+				SetAttributeValue("existingcase", value);
+				OnPropertyChanged("ExistingCase");
 			}
 		}
 		
@@ -756,13 +756,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("firstresponsebykpiid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("firstresponsebykpiid");
 			}
 			set
 			{
-				this.OnPropertyChanging("FirstResponseByKPIId");
-				this.SetAttributeValue("firstresponsebykpiid", value);
-				this.OnPropertyChanged("FirstResponseByKPIId");
+				OnPropertyChanging("FirstResponseByKPIId");
+				SetAttributeValue("firstresponsebykpiid", value);
+				OnPropertyChanged("FirstResponseByKPIId");
 			}
 		}
 		
@@ -770,17 +770,17 @@ namespace Dataverse_api.Entities
 		/// Indicates if the first response has been sent.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("firstresponsesent")]
-		public System.Nullable<bool> FirstResponseSent
+		public Nullable<bool> FirstResponseSent
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("firstresponsesent");
+				return GetAttributeValue<Nullable<bool>>("firstresponsesent");
 			}
 			set
 			{
-				this.OnPropertyChanging("FirstResponseSent");
-				this.SetAttributeValue("firstresponsesent", value);
-				this.OnPropertyChanged("FirstResponseSent");
+				OnPropertyChanging("FirstResponseSent");
+				SetAttributeValue("firstresponsesent", value);
+				OnPropertyChanged("FirstResponseSent");
 			}
 		}
 		
@@ -796,9 +796,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("FirstResponseSLAStatus");
-				this.SetAttributeValue("firstresponseslastatus", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("FirstResponseSLAStatus");
+				OnPropertyChanging("FirstResponseSLAStatus");
+				SetAttributeValue("firstresponseslastatus", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("FirstResponseSLAStatus");
 			}
 		}
 		
@@ -806,17 +806,17 @@ namespace Dataverse_api.Entities
 		/// Enter the date by which a customer service representative has to follow up with the customer on this case.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("followupby")]
-		public System.Nullable<System.DateTime> FollowupBy
+		public Nullable<DateTime> FollowupBy
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.DateTime>>("followupby");
+				return GetAttributeValue<Nullable<DateTime>>("followupby");
 			}
 			set
 			{
-				this.OnPropertyChanging("FollowupBy");
-				this.SetAttributeValue("followupby", value);
-				this.OnPropertyChanged("FollowupBy");
+				OnPropertyChanging("FollowupBy");
+				SetAttributeValue("followupby", value);
+				OnPropertyChanged("FollowupBy");
 			}
 		}
 		
@@ -824,17 +824,17 @@ namespace Dataverse_api.Entities
 		/// This attribute is used for Sample Service Business Processes.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("followuptaskcreated")]
-		public System.Nullable<bool> FollowUpTaskCreated
+		public Nullable<bool> FollowUpTaskCreated
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("followuptaskcreated");
+				return GetAttributeValue<Nullable<bool>>("followuptaskcreated");
 			}
 			set
 			{
-				this.OnPropertyChanging("FollowUpTaskCreated");
-				this.SetAttributeValue("followuptaskcreated", value);
-				this.OnPropertyChanged("FollowUpTaskCreated");
+				OnPropertyChanging("FollowUpTaskCreated");
+				SetAttributeValue("followuptaskcreated", value);
+				OnPropertyChanged("FollowUpTaskCreated");
 			}
 		}
 		
@@ -842,17 +842,17 @@ namespace Dataverse_api.Entities
 		/// Sequence number of the import that created this record.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("importsequencenumber")]
-		public System.Nullable<int> ImportSequenceNumber
+		public Nullable<int> ImportSequenceNumber
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("importsequencenumber");
+				return GetAttributeValue<Nullable<int>>("importsequencenumber");
 			}
 			set
 			{
-				this.OnPropertyChanging("ImportSequenceNumber");
-				this.SetAttributeValue("importsequencenumber", value);
-				this.OnPropertyChanged("ImportSequenceNumber");
+				OnPropertyChanging("ImportSequenceNumber");
+				SetAttributeValue("importsequencenumber", value);
+				OnPropertyChanged("ImportSequenceNumber");
 			}
 		}
 		
@@ -860,30 +860,30 @@ namespace Dataverse_api.Entities
 		/// Unique identifier of the case.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("incidentid")]
-		public System.Nullable<System.Guid> IncidentId
+		public Nullable<Guid> IncidentId
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("incidentid");
+				return GetAttributeValue<Nullable<Guid>>("incidentid");
 			}
 			set
 			{
-				this.OnPropertyChanging("IncidentId");
-				this.SetAttributeValue("incidentid", value);
+				OnPropertyChanging("IncidentId");
+				SetAttributeValue("incidentid", value);
 				if (value.HasValue)
 				{
 					base.Id = value.Value;
 				}
 				else
 				{
-					base.Id = System.Guid.Empty;
+					base.Id = Guid.Empty;
 				}
-				this.OnPropertyChanged("IncidentId");
+				OnPropertyChanged("IncidentId");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("incidentid")]
-		public override System.Guid Id
+		public override Guid Id
 		{
 			get
 			{
@@ -891,7 +891,7 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.IncidentId = value;
+				IncidentId = value;
 			}
 		}
 		
@@ -907,9 +907,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("IncidentStageCode");
-				this.SetAttributeValue("incidentstagecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("IncidentStageCode");
+				OnPropertyChanging("IncidentStageCode");
+				SetAttributeValue("incidentstagecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("IncidentStageCode");
 			}
 		}
 		
@@ -917,17 +917,17 @@ namespace Dataverse_api.Entities
 		/// Will contain the Influencer score coming from NetBreeze.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("influencescore")]
-		public System.Nullable<double> InfluenceScore
+		public Nullable<double> InfluenceScore
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<double>>("influencescore");
+				return GetAttributeValue<Nullable<double>>("influencescore");
 			}
 			set
 			{
-				this.OnPropertyChanging("InfluenceScore");
-				this.SetAttributeValue("influencescore", value);
-				this.OnPropertyChanged("InfluenceScore");
+				OnPropertyChanging("InfluenceScore");
+				SetAttributeValue("influencescore", value);
+				OnPropertyChanged("InfluenceScore");
 			}
 		}
 		
@@ -935,17 +935,17 @@ namespace Dataverse_api.Entities
 		/// For system use only.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isdecrementing")]
-		public System.Nullable<bool> IsDecrementing
+		public Nullable<bool> IsDecrementing
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("isdecrementing");
+				return GetAttributeValue<Nullable<bool>>("isdecrementing");
 			}
 			set
 			{
-				this.OnPropertyChanging("IsDecrementing");
-				this.SetAttributeValue("isdecrementing", value);
-				this.OnPropertyChanged("IsDecrementing");
+				OnPropertyChanging("IsDecrementing");
+				SetAttributeValue("isdecrementing", value);
+				OnPropertyChanged("IsDecrementing");
 			}
 		}
 		
@@ -953,17 +953,17 @@ namespace Dataverse_api.Entities
 		/// Indicates if the case has been escalated.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isescalated")]
-		public System.Nullable<bool> IsEscalated
+		public Nullable<bool> IsEscalated
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("isescalated");
+				return GetAttributeValue<Nullable<bool>>("isescalated");
 			}
 			set
 			{
-				this.OnPropertyChanging("IsEscalated");
-				this.SetAttributeValue("isescalated", value);
-				this.OnPropertyChanged("IsEscalated");
+				OnPropertyChanging("IsEscalated");
+				SetAttributeValue("isescalated", value);
+				OnPropertyChanged("IsEscalated");
 			}
 		}
 		
@@ -975,13 +975,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("kbarticleid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("kbarticleid");
 			}
 			set
 			{
-				this.OnPropertyChanging("KbArticleId");
-				this.SetAttributeValue("kbarticleid", value);
-				this.OnPropertyChanged("KbArticleId");
+				OnPropertyChanging("KbArticleId");
+				SetAttributeValue("kbarticleid", value);
+				OnPropertyChanged("KbArticleId");
 			}
 		}
 		
@@ -993,7 +993,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("lastinteraction");
+				return GetAttributeValue<string>("lastinteraction");
 			}
 		}
 		
@@ -1001,17 +1001,17 @@ namespace Dataverse_api.Entities
 		/// Contains the date time stamp of the last on hold time.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("lastonholdtime")]
-		public System.Nullable<System.DateTime> LastOnHoldTime
+		public Nullable<DateTime> LastOnHoldTime
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.DateTime>>("lastonholdtime");
+				return GetAttributeValue<Nullable<DateTime>>("lastonholdtime");
 			}
 			set
 			{
-				this.OnPropertyChanging("LastOnHoldTime");
-				this.SetAttributeValue("lastonholdtime", value);
-				this.OnPropertyChanged("LastOnHoldTime");
+				OnPropertyChanging("LastOnHoldTime");
+				SetAttributeValue("lastonholdtime", value);
+				OnPropertyChanged("LastOnHoldTime");
 			}
 		}
 		
@@ -1023,13 +1023,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("masterid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("masterid");
 			}
 			set
 			{
-				this.OnPropertyChanging("MasterId");
-				this.SetAttributeValue("masterid", value);
-				this.OnPropertyChanged("MasterId");
+				OnPropertyChanging("MasterId");
+				SetAttributeValue("masterid", value);
+				OnPropertyChanged("MasterId");
 			}
 		}
 		
@@ -1037,11 +1037,11 @@ namespace Dataverse_api.Entities
 		/// Tells whether the incident has been merged with another incident.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("merged")]
-		public System.Nullable<bool> Merged
+		public Nullable<bool> Merged
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("merged");
+				return GetAttributeValue<Nullable<bool>>("merged");
 			}
 		}
 		
@@ -1057,9 +1057,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("MessageTypeCode");
-				this.SetAttributeValue("messagetypecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("MessageTypeCode");
+				OnPropertyChanging("MessageTypeCode");
+				SetAttributeValue("messagetypecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("MessageTypeCode");
 			}
 		}
 		
@@ -1071,7 +1071,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
 			}
 		}
 		
@@ -1083,7 +1083,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedbyexternalparty");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedbyexternalparty");
 			}
 		}
 		
@@ -1091,11 +1091,11 @@ namespace Dataverse_api.Entities
 		/// Date and time when the record was modified.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
-		public System.Nullable<System.DateTime> ModifiedOn
+		public Nullable<DateTime> ModifiedOn
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.DateTime>>("modifiedon");
+				return GetAttributeValue<Nullable<DateTime>>("modifiedon");
 			}
 		}
 		
@@ -1107,7 +1107,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedonbehalfby");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedonbehalfby");
 			}
 		}
 		
@@ -1119,28 +1119,28 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("msdyn_casesurveyinviteurl");
+				return GetAttributeValue<string>("msdyn_casesurveyinviteurl");
 			}
 			set
 			{
-				this.OnPropertyChanging("msdyn_CaseSurveyInviteUrl");
-				this.SetAttributeValue("msdyn_casesurveyinviteurl", value);
-				this.OnPropertyChanged("msdyn_CaseSurveyInviteUrl");
+				OnPropertyChanging("msdyn_CaseSurveyInviteUrl");
+				SetAttributeValue("msdyn_casesurveyinviteurl", value);
+				OnPropertyChanged("msdyn_CaseSurveyInviteUrl");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_copilotengaged")]
-		public System.Nullable<bool> msdyn_copilotengaged
+		public Nullable<bool> msdyn_copilotengaged
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("msdyn_copilotengaged");
+				return GetAttributeValue<Nullable<bool>>("msdyn_copilotengaged");
 			}
 			set
 			{
-				this.OnPropertyChanging("msdyn_copilotengaged");
-				this.SetAttributeValue("msdyn_copilotengaged", value);
-				this.OnPropertyChanged("msdyn_copilotengaged");
+				OnPropertyChanging("msdyn_copilotengaged");
+				SetAttributeValue("msdyn_copilotengaged", value);
+				OnPropertyChanged("msdyn_copilotengaged");
 			}
 		}
 		
@@ -1152,13 +1152,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msdyn_iotalert");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msdyn_iotalert");
 			}
 			set
 			{
-				this.OnPropertyChanging("msdyn_iotalert");
-				this.SetAttributeValue("msdyn_iotalert", value);
-				this.OnPropertyChanged("msdyn_iotalert");
+				OnPropertyChanging("msdyn_iotalert");
+				SetAttributeValue("msdyn_iotalert", value);
+				OnPropertyChanged("msdyn_iotalert");
 			}
 		}
 		
@@ -1170,13 +1170,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("msdyn_precreateattachmentsid");
+				return GetAttributeValue<string>("msdyn_precreateattachmentsid");
 			}
 			set
 			{
-				this.OnPropertyChanging("msdyn_precreateattachmentsid");
-				this.SetAttributeValue("msdyn_precreateattachmentsid", value);
-				this.OnPropertyChanged("msdyn_precreateattachmentsid");
+				OnPropertyChanging("msdyn_precreateattachmentsid");
+				SetAttributeValue("msdyn_precreateattachmentsid", value);
+				OnPropertyChanged("msdyn_precreateattachmentsid");
 			}
 		}
 		
@@ -1188,13 +1188,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("msdyn_precreatenotesid");
+				return GetAttributeValue<string>("msdyn_precreatenotesid");
 			}
 			set
 			{
-				this.OnPropertyChanging("msdyn_precreatenotesid");
-				this.SetAttributeValue("msdyn_precreatenotesid", value);
-				this.OnPropertyChanged("msdyn_precreatenotesid");
+				OnPropertyChanging("msdyn_precreatenotesid");
+				SetAttributeValue("msdyn_precreatenotesid", value);
+				OnPropertyChanged("msdyn_precreatenotesid");
 			}
 		}
 		
@@ -1206,13 +1206,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("nextsla");
+				return GetAttributeValue<string>("nextsla");
 			}
 			set
 			{
-				this.OnPropertyChanging("nextsla");
-				this.SetAttributeValue("nextsla", value);
-				this.OnPropertyChanged("nextsla");
+				OnPropertyChanging("nextsla");
+				SetAttributeValue("nextsla", value);
+				OnPropertyChanged("nextsla");
 			}
 		}
 		
@@ -1220,11 +1220,11 @@ namespace Dataverse_api.Entities
 		/// Number of child incidents associated with the incident.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("numberofchildincidents")]
-		public System.Nullable<int> NumberOfChildIncidents
+		public Nullable<int> NumberOfChildIncidents
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("numberofchildincidents");
+				return GetAttributeValue<Nullable<int>>("numberofchildincidents");
 			}
 		}
 		
@@ -1232,11 +1232,11 @@ namespace Dataverse_api.Entities
 		/// Shows the duration in minutes for which the case was on hold.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("onholdtime")]
-		public System.Nullable<int> OnHoldTime
+		public Nullable<int> OnHoldTime
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("onholdtime");
+				return GetAttributeValue<Nullable<int>>("onholdtime");
 			}
 		}
 		
@@ -1244,17 +1244,17 @@ namespace Dataverse_api.Entities
 		/// Date and time that the record was migrated.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("overriddencreatedon")]
-		public System.Nullable<System.DateTime> OverriddenCreatedOn
+		public Nullable<DateTime> OverriddenCreatedOn
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.DateTime>>("overriddencreatedon");
+				return GetAttributeValue<Nullable<DateTime>>("overriddencreatedon");
 			}
 			set
 			{
-				this.OnPropertyChanging("OverriddenCreatedOn");
-				this.SetAttributeValue("overriddencreatedon", value);
-				this.OnPropertyChanged("OverriddenCreatedOn");
+				OnPropertyChanging("OverriddenCreatedOn");
+				SetAttributeValue("overriddencreatedon", value);
+				OnPropertyChanged("OverriddenCreatedOn");
 			}
 		}
 		
@@ -1266,13 +1266,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ownerid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ownerid");
 			}
 			set
 			{
-				this.OnPropertyChanging("OwnerId");
-				this.SetAttributeValue("ownerid", value);
-				this.OnPropertyChanged("OwnerId");
+				OnPropertyChanging("OwnerId");
+				SetAttributeValue("ownerid", value);
+				OnPropertyChanged("OwnerId");
 			}
 		}
 		
@@ -1284,7 +1284,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningbusinessunit");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningbusinessunit");
 			}
 		}
 		
@@ -1296,7 +1296,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningteam");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningteam");
 			}
 		}
 		
@@ -1308,7 +1308,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owninguser");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owninguser");
 			}
 		}
 		
@@ -1320,13 +1320,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("parentcaseid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("parentcaseid");
 			}
 			set
 			{
-				this.OnPropertyChanging("ParentCaseId");
-				this.SetAttributeValue("parentcaseid", value);
-				this.OnPropertyChanged("ParentCaseId");
+				OnPropertyChanging("ParentCaseId");
+				SetAttributeValue("parentcaseid", value);
+				OnPropertyChanged("ParentCaseId");
 			}
 		}
 		
@@ -1338,13 +1338,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("primarycontactid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("primarycontactid");
 			}
 			set
 			{
-				this.OnPropertyChanging("PrimaryContactId");
-				this.SetAttributeValue("primarycontactid", value);
-				this.OnPropertyChanged("PrimaryContactId");
+				OnPropertyChanging("PrimaryContactId");
+				SetAttributeValue("primarycontactid", value);
+				OnPropertyChanged("PrimaryContactId");
 			}
 		}
 		
@@ -1360,9 +1360,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("PriorityCode");
-				this.SetAttributeValue("prioritycode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("PriorityCode");
+				OnPropertyChanging("PriorityCode");
+				SetAttributeValue("prioritycode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("PriorityCode");
 			}
 		}
 		
@@ -1370,17 +1370,17 @@ namespace Dataverse_api.Entities
 		/// Contains the id of the process associated with the entity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("processid")]
-		public System.Nullable<System.Guid> ProcessId
+		public Nullable<Guid> ProcessId
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("processid");
+				return GetAttributeValue<Nullable<Guid>>("processid");
 			}
 			set
 			{
-				this.OnPropertyChanging("ProcessId");
-				this.SetAttributeValue("processid", value);
-				this.OnPropertyChanged("ProcessId");
+				OnPropertyChanging("ProcessId");
+				SetAttributeValue("processid", value);
+				OnPropertyChanged("ProcessId");
 			}
 		}
 		
@@ -1392,13 +1392,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("productid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("productid");
 			}
 			set
 			{
-				this.OnPropertyChanging("ProductId");
-				this.SetAttributeValue("productid", value);
-				this.OnPropertyChanged("ProductId");
+				OnPropertyChanging("ProductId");
+				SetAttributeValue("productid", value);
+				OnPropertyChanged("ProductId");
 			}
 		}
 		
@@ -1410,13 +1410,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("productserialnumber");
+				return GetAttributeValue<string>("productserialnumber");
 			}
 			set
 			{
-				this.OnPropertyChanging("ProductSerialNumber");
-				this.SetAttributeValue("productserialnumber", value);
-				this.OnPropertyChanged("ProductSerialNumber");
+				OnPropertyChanging("ProductSerialNumber");
+				SetAttributeValue("productserialnumber", value);
+				OnPropertyChanged("ProductSerialNumber");
 			}
 		}
 		
@@ -1424,17 +1424,17 @@ namespace Dataverse_api.Entities
 		/// Enter the date by when the case must be resolved.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("resolveby")]
-		public System.Nullable<System.DateTime> ResolveBy
+		public Nullable<DateTime> ResolveBy
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.DateTime>>("resolveby");
+				return GetAttributeValue<Nullable<DateTime>>("resolveby");
 			}
 			set
 			{
-				this.OnPropertyChanging("ResolveBy");
-				this.SetAttributeValue("resolveby", value);
-				this.OnPropertyChanged("ResolveBy");
+				OnPropertyChanging("ResolveBy");
+				SetAttributeValue("resolveby", value);
+				OnPropertyChanged("ResolveBy");
 			}
 		}
 		
@@ -1446,13 +1446,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("resolvebykpiid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("resolvebykpiid");
 			}
 			set
 			{
-				this.OnPropertyChanging("ResolveByKPIId");
-				this.SetAttributeValue("resolvebykpiid", value);
-				this.OnPropertyChanged("ResolveByKPIId");
+				OnPropertyChanging("ResolveByKPIId");
+				SetAttributeValue("resolvebykpiid", value);
+				OnPropertyChanged("ResolveByKPIId");
 			}
 		}
 		
@@ -1468,9 +1468,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("ResolveBySLAStatus");
-				this.SetAttributeValue("resolvebyslastatus", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("ResolveBySLAStatus");
+				OnPropertyChanging("ResolveBySLAStatus");
+				SetAttributeValue("resolvebyslastatus", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("ResolveBySLAStatus");
 			}
 		}
 		
@@ -1478,17 +1478,17 @@ namespace Dataverse_api.Entities
 		/// For internal use only.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("responseby")]
-		public System.Nullable<System.DateTime> ResponseBy
+		public Nullable<DateTime> ResponseBy
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.DateTime>>("responseby");
+				return GetAttributeValue<Nullable<DateTime>>("responseby");
 			}
 			set
 			{
-				this.OnPropertyChanging("ResponseBy");
-				this.SetAttributeValue("responseby", value);
-				this.OnPropertyChanged("ResponseBy");
+				OnPropertyChanging("ResponseBy");
+				SetAttributeValue("responseby", value);
+				OnPropertyChanged("ResponseBy");
 			}
 		}
 		
@@ -1501,13 +1501,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("responsiblecontactid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("responsiblecontactid");
 			}
 			set
 			{
-				this.OnPropertyChanging("ResponsibleContactId");
-				this.SetAttributeValue("responsiblecontactid", value);
-				this.OnPropertyChanged("ResponsibleContactId");
+				OnPropertyChanging("ResponsibleContactId");
+				SetAttributeValue("responsiblecontactid", value);
+				OnPropertyChanged("ResponsibleContactId");
 			}
 		}
 		
@@ -1515,17 +1515,17 @@ namespace Dataverse_api.Entities
 		/// Tells whether the incident has been routed to queue or not.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("routecase")]
-		public System.Nullable<bool> RouteCase
+		public Nullable<bool> RouteCase
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("routecase");
+				return GetAttributeValue<Nullable<bool>>("routecase");
 			}
 			set
 			{
-				this.OnPropertyChanging("RouteCase");
-				this.SetAttributeValue("routecase", value);
-				this.OnPropertyChanged("RouteCase");
+				OnPropertyChanging("RouteCase");
+				SetAttributeValue("routecase", value);
+				OnPropertyChanged("RouteCase");
 			}
 		}
 		
@@ -1533,17 +1533,17 @@ namespace Dataverse_api.Entities
 		/// Value derived after assessing words commonly associated with a negative, neutral, or positive sentiment that occurs in a social post. Sentiment information can also be reported as numeric values.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sentimentvalue")]
-		public System.Nullable<double> SentimentValue
+		public Nullable<double> SentimentValue
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<double>>("sentimentvalue");
+				return GetAttributeValue<Nullable<double>>("sentimentvalue");
 			}
 			set
 			{
-				this.OnPropertyChanging("SentimentValue");
-				this.SetAttributeValue("sentimentvalue", value);
-				this.OnPropertyChanged("SentimentValue");
+				OnPropertyChanging("SentimentValue");
+				SetAttributeValue("sentimentvalue", value);
+				OnPropertyChanged("SentimentValue");
 			}
 		}
 		
@@ -1559,9 +1559,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("ServiceStage");
-				this.SetAttributeValue("servicestage", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("ServiceStage");
+				OnPropertyChanging("ServiceStage");
+				SetAttributeValue("servicestage", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("ServiceStage");
 			}
 		}
 		
@@ -1577,9 +1577,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("SeverityCode");
-				this.SetAttributeValue("severitycode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("SeverityCode");
+				OnPropertyChanging("SeverityCode");
+				SetAttributeValue("severitycode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("SeverityCode");
 			}
 		}
 		
@@ -1591,13 +1591,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("slaid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("slaid");
 			}
 			set
 			{
-				this.OnPropertyChanging("SLAId");
-				this.SetAttributeValue("slaid", value);
-				this.OnPropertyChanged("SLAId");
+				OnPropertyChanging("SLAId");
+				SetAttributeValue("slaid", value);
+				OnPropertyChanged("SLAId");
 			}
 		}
 		
@@ -1609,7 +1609,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("slainvokedid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("slainvokedid");
 			}
 		}
 		
@@ -1621,13 +1621,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("socialprofileid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("socialprofileid");
 			}
 			set
 			{
-				this.OnPropertyChanging("SocialProfileId");
-				this.SetAttributeValue("socialprofileid", value);
-				this.OnPropertyChanged("SocialProfileId");
+				OnPropertyChanging("SocialProfileId");
+				SetAttributeValue("socialprofileid", value);
+				OnPropertyChanged("SocialProfileId");
 			}
 		}
 		
@@ -1635,17 +1635,17 @@ namespace Dataverse_api.Entities
 		/// Contains the id of the stage where the entity is located.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("stageid")]
-		public System.Nullable<System.Guid> StageId
+		public Nullable<Guid> StageId
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("stageid");
+				return GetAttributeValue<Nullable<Guid>>("stageid");
 			}
 			set
 			{
-				this.OnPropertyChanging("StageId");
-				this.SetAttributeValue("stageid", value);
-				this.OnPropertyChanged("StageId");
+				OnPropertyChanging("StageId");
+				SetAttributeValue("stageid", value);
+				OnPropertyChanged("StageId");
 			}
 		}
 		
@@ -1661,9 +1661,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("StateCode");
-				this.SetAttributeValue("statecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("StateCode");
+				OnPropertyChanging("StateCode");
+				SetAttributeValue("statecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("StateCode");
 			}
 		}
 		
@@ -1679,9 +1679,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("StatusCode");
-				this.SetAttributeValue("statuscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("StatusCode");
+				OnPropertyChanging("StatusCode");
+				SetAttributeValue("statuscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("StatusCode");
 			}
 		}
 		
@@ -1693,13 +1693,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("subjectid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("subjectid");
 			}
 			set
 			{
-				this.OnPropertyChanging("SubjectId");
-				this.SetAttributeValue("subjectid", value);
-				this.OnPropertyChanged("SubjectId");
+				OnPropertyChanging("SubjectId");
+				SetAttributeValue("subjectid", value);
+				OnPropertyChanged("SubjectId");
 			}
 		}
 		
@@ -1711,13 +1711,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("ticketnumber");
+				return GetAttributeValue<string>("ticketnumber");
 			}
 			set
 			{
-				this.OnPropertyChanging("TicketNumber");
-				this.SetAttributeValue("ticketnumber", value);
-				this.OnPropertyChanged("TicketNumber");
+				OnPropertyChanging("TicketNumber");
+				SetAttributeValue("ticketnumber", value);
+				OnPropertyChanged("TicketNumber");
 			}
 		}
 		
@@ -1725,17 +1725,17 @@ namespace Dataverse_api.Entities
 		/// For internal use only.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezoneruleversionnumber")]
-		public System.Nullable<int> TimeZoneRuleVersionNumber
+		public Nullable<int> TimeZoneRuleVersionNumber
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("timezoneruleversionnumber");
+				return GetAttributeValue<Nullable<int>>("timezoneruleversionnumber");
 			}
 			set
 			{
-				this.OnPropertyChanging("TimeZoneRuleVersionNumber");
-				this.SetAttributeValue("timezoneruleversionnumber", value);
-				this.OnPropertyChanged("TimeZoneRuleVersionNumber");
+				OnPropertyChanging("TimeZoneRuleVersionNumber");
+				SetAttributeValue("timezoneruleversionnumber", value);
+				OnPropertyChanged("TimeZoneRuleVersionNumber");
 			}
 		}
 		
@@ -1747,13 +1747,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("title");
+				return GetAttributeValue<string>("title");
 			}
 			set
 			{
-				this.OnPropertyChanging("Title");
-				this.SetAttributeValue("title", value);
-				this.OnPropertyChanged("Title");
+				OnPropertyChanging("Title");
+				SetAttributeValue("title", value);
+				OnPropertyChanged("Title");
 			}
 		}
 		
@@ -1765,13 +1765,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("transactioncurrencyid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("transactioncurrencyid");
 			}
 			set
 			{
-				this.OnPropertyChanging("TransactionCurrencyId");
-				this.SetAttributeValue("transactioncurrencyid", value);
-				this.OnPropertyChanged("TransactionCurrencyId");
+				OnPropertyChanging("TransactionCurrencyId");
+				SetAttributeValue("transactioncurrencyid", value);
+				OnPropertyChanged("TransactionCurrencyId");
 			}
 		}
 		
@@ -1783,13 +1783,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("traversedpath");
+				return GetAttributeValue<string>("traversedpath");
 			}
 			set
 			{
-				this.OnPropertyChanging("TraversedPath");
-				this.SetAttributeValue("traversedpath", value);
-				this.OnPropertyChanged("TraversedPath");
+				OnPropertyChanging("TraversedPath");
+				SetAttributeValue("traversedpath", value);
+				OnPropertyChanged("TraversedPath");
 			}
 		}
 		
@@ -1797,17 +1797,17 @@ namespace Dataverse_api.Entities
 		/// Time zone code that was in use when the record was created.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("utcconversiontimezonecode")]
-		public System.Nullable<int> UTCConversionTimeZoneCode
+		public Nullable<int> UTCConversionTimeZoneCode
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("utcconversiontimezonecode");
+				return GetAttributeValue<Nullable<int>>("utcconversiontimezonecode");
 			}
 			set
 			{
-				this.OnPropertyChanging("UTCConversionTimeZoneCode");
-				this.SetAttributeValue("utcconversiontimezonecode", value);
-				this.OnPropertyChanged("UTCConversionTimeZoneCode");
+				OnPropertyChanging("UTCConversionTimeZoneCode");
+				SetAttributeValue("utcconversiontimezonecode", value);
+				OnPropertyChanged("UTCConversionTimeZoneCode");
 			}
 		}
 		
@@ -1815,11 +1815,11 @@ namespace Dataverse_api.Entities
 		/// Version Number
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("versionnumber")]
-		public System.Nullable<long> VersionNumber
+		public Nullable<long> VersionNumber
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<long>>("versionnumber");
+				return GetAttributeValue<Nullable<long>>("versionnumber");
 			}
 		}
 		
@@ -1827,17 +1827,17 @@ namespace Dataverse_api.Entities
 		/// 1:N incident_existingcase
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incident_existingcase", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
-		public System.Collections.Generic.IEnumerable<Incident> Referencedincident_existingcase
+		public IEnumerable<Incident> Referencedincident_existingcase
 		{
 			get
 			{
-				return this.GetRelatedEntities<Incident>("incident_existingcase", Microsoft.Xrm.Sdk.EntityRole.Referenced);
+				return GetRelatedEntities<Incident>("incident_existingcase", Microsoft.Xrm.Sdk.EntityRole.Referenced);
 			}
 			set
 			{
-				this.OnPropertyChanging("Referencedincident_existingcase");
-				this.SetRelatedEntities<Incident>("incident_existingcase", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
-				this.OnPropertyChanged("Referencedincident_existingcase");
+				OnPropertyChanging("Referencedincident_existingcase");
+				SetRelatedEntities<Incident>("incident_existingcase", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
+				OnPropertyChanged("Referencedincident_existingcase");
 			}
 		}
 		
@@ -1845,17 +1845,17 @@ namespace Dataverse_api.Entities
 		/// 1:N incident_master_incident
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incident_master_incident", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
-		public System.Collections.Generic.IEnumerable<Incident> Referencedincident_master_incident
+		public IEnumerable<Incident> Referencedincident_master_incident
 		{
 			get
 			{
-				return this.GetRelatedEntities<Incident>("incident_master_incident", Microsoft.Xrm.Sdk.EntityRole.Referenced);
+				return GetRelatedEntities<Incident>("incident_master_incident", Microsoft.Xrm.Sdk.EntityRole.Referenced);
 			}
 			set
 			{
-				this.OnPropertyChanging("Referencedincident_master_incident");
-				this.SetRelatedEntities<Incident>("incident_master_incident", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
-				this.OnPropertyChanged("Referencedincident_master_incident");
+				OnPropertyChanging("Referencedincident_master_incident");
+				SetRelatedEntities<Incident>("incident_master_incident", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
+				OnPropertyChanged("Referencedincident_master_incident");
 			}
 		}
 		
@@ -1863,17 +1863,17 @@ namespace Dataverse_api.Entities
 		/// 1:N incident_parent_incident
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incident_parent_incident", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
-		public System.Collections.Generic.IEnumerable<Incident> Referencedincident_parent_incident
+		public IEnumerable<Incident> Referencedincident_parent_incident
 		{
 			get
 			{
-				return this.GetRelatedEntities<Incident>("incident_parent_incident", Microsoft.Xrm.Sdk.EntityRole.Referenced);
+				return GetRelatedEntities<Incident>("incident_parent_incident", Microsoft.Xrm.Sdk.EntityRole.Referenced);
 			}
 			set
 			{
-				this.OnPropertyChanging("Referencedincident_parent_incident");
-				this.SetRelatedEntities<Incident>("incident_parent_incident", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
-				this.OnPropertyChanged("Referencedincident_parent_incident");
+				OnPropertyChanging("Referencedincident_parent_incident");
+				SetRelatedEntities<Incident>("incident_parent_incident", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
+				OnPropertyChanged("Referencedincident_parent_incident");
 			}
 		}
 		
@@ -1886,13 +1886,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetRelatedEntity<Contact>("contact_as_primary_contact", null);
+				return GetRelatedEntity<Contact>("contact_as_primary_contact", null);
 			}
 			set
 			{
-				this.OnPropertyChanging("contact_as_primary_contact");
-				this.SetRelatedEntity<Contact>("contact_as_primary_contact", null, value);
-				this.OnPropertyChanged("contact_as_primary_contact");
+				OnPropertyChanging("contact_as_primary_contact");
+				SetRelatedEntity<Contact>("contact_as_primary_contact", null, value);
+				OnPropertyChanged("contact_as_primary_contact");
 			}
 		}
 		
@@ -1905,13 +1905,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetRelatedEntity<Contact>("contact_as_responsible_contact", null);
+				return GetRelatedEntity<Contact>("contact_as_responsible_contact", null);
 			}
 			set
 			{
-				this.OnPropertyChanging("contact_as_responsible_contact");
-				this.SetRelatedEntity<Contact>("contact_as_responsible_contact", null, value);
-				this.OnPropertyChanged("contact_as_responsible_contact");
+				OnPropertyChanging("contact_as_responsible_contact");
+				SetRelatedEntity<Contact>("contact_as_responsible_contact", null, value);
+				OnPropertyChanged("contact_as_responsible_contact");
 			}
 		}
 		
@@ -1924,13 +1924,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetRelatedEntity<Account>("incident_customer_accounts", null);
+				return GetRelatedEntity<Account>("incident_customer_accounts", null);
 			}
 			set
 			{
-				this.OnPropertyChanging("incident_customer_accounts");
-				this.SetRelatedEntity<Account>("incident_customer_accounts", null, value);
-				this.OnPropertyChanged("incident_customer_accounts");
+				OnPropertyChanging("incident_customer_accounts");
+				SetRelatedEntity<Account>("incident_customer_accounts", null, value);
+				OnPropertyChanged("incident_customer_accounts");
 			}
 		}
 		
@@ -1943,13 +1943,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetRelatedEntity<Contact>("incident_customer_contacts", null);
+				return GetRelatedEntity<Contact>("incident_customer_contacts", null);
 			}
 			set
 			{
-				this.OnPropertyChanging("incident_customer_contacts");
-				this.SetRelatedEntity<Contact>("incident_customer_contacts", null, value);
-				this.OnPropertyChanged("incident_customer_contacts");
+				OnPropertyChanging("incident_customer_contacts");
+				SetRelatedEntity<Contact>("incident_customer_contacts", null, value);
+				OnPropertyChanged("incident_customer_contacts");
 			}
 		}
 		
@@ -1962,13 +1962,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetRelatedEntity<Incident>("incident_existingcase", Microsoft.Xrm.Sdk.EntityRole.Referencing);
+				return GetRelatedEntity<Incident>("incident_existingcase", Microsoft.Xrm.Sdk.EntityRole.Referencing);
 			}
 			set
 			{
-				this.OnPropertyChanging("Referencingincident_existingcase");
-				this.SetRelatedEntity<Incident>("incident_existingcase", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
-				this.OnPropertyChanged("Referencingincident_existingcase");
+				OnPropertyChanging("Referencingincident_existingcase");
+				SetRelatedEntity<Incident>("incident_existingcase", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
+				OnPropertyChanged("Referencingincident_existingcase");
 			}
 		}
 		
@@ -1981,13 +1981,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetRelatedEntity<Incident>("incident_master_incident", Microsoft.Xrm.Sdk.EntityRole.Referencing);
+				return GetRelatedEntity<Incident>("incident_master_incident", Microsoft.Xrm.Sdk.EntityRole.Referencing);
 			}
 			set
 			{
-				this.OnPropertyChanging("Referencingincident_master_incident");
-				this.SetRelatedEntity<Incident>("incident_master_incident", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
-				this.OnPropertyChanged("Referencingincident_master_incident");
+				OnPropertyChanging("Referencingincident_master_incident");
+				SetRelatedEntity<Incident>("incident_master_incident", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
+				OnPropertyChanged("Referencingincident_master_incident");
 			}
 		}
 		
@@ -2000,13 +2000,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetRelatedEntity<Incident>("incident_parent_incident", Microsoft.Xrm.Sdk.EntityRole.Referencing);
+				return GetRelatedEntity<Incident>("incident_parent_incident", Microsoft.Xrm.Sdk.EntityRole.Referencing);
 			}
 			set
 			{
-				this.OnPropertyChanging("Referencingincident_parent_incident");
-				this.SetRelatedEntity<Incident>("incident_parent_incident", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
-				this.OnPropertyChanged("Referencingincident_parent_incident");
+				OnPropertyChanging("Referencingincident_parent_incident");
+				SetRelatedEntity<Incident>("incident_parent_incident", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
+				OnPropertyChanged("Referencingincident_parent_incident");
 			}
 		}
 	}

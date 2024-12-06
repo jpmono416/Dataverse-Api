@@ -528,17 +528,17 @@ namespace Dataverse_api.Entities
 		
 		private void OnPropertyChanged(string propertyName)
 		{
-			if ((this.PropertyChanged != null))
+			if ((PropertyChanged != null))
 			{
-				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+				PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
 			}
 		}
 		
 		private void OnPropertyChanging(string propertyName)
 		{
-			if ((this.PropertyChanging != null))
+			if ((PropertyChanging != null))
 			{
-				this.PropertyChanging(this, new System.ComponentModel.PropertyChangingEventArgs(propertyName));
+				PropertyChanging(this, new System.ComponentModel.PropertyChangingEventArgs(propertyName));
 			}
 		}
 		
@@ -554,9 +554,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("AccountCategoryCode");
-				this.SetAttributeValue("accountcategorycode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("AccountCategoryCode");
+				OnPropertyChanging("AccountCategoryCode");
+				SetAttributeValue("accountcategorycode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("AccountCategoryCode");
 			}
 		}
 		
@@ -572,9 +572,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("AccountClassificationCode");
-				this.SetAttributeValue("accountclassificationcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("AccountClassificationCode");
+				OnPropertyChanging("AccountClassificationCode");
+				SetAttributeValue("accountclassificationcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("AccountClassificationCode");
 			}
 		}
 		
@@ -582,30 +582,30 @@ namespace Dataverse_api.Entities
 		/// Unique identifier of the account.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("accountid")]
-		public System.Nullable<System.Guid> AccountId
+		public Nullable<Guid> AccountId
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("accountid");
+				return GetAttributeValue<Nullable<Guid>>("accountid");
 			}
 			set
 			{
-				this.OnPropertyChanging("AccountId");
-				this.SetAttributeValue("accountid", value);
+				OnPropertyChanging("AccountId");
+				SetAttributeValue("accountid", value);
 				if (value.HasValue)
 				{
 					base.Id = value.Value;
 				}
 				else
 				{
-					base.Id = System.Guid.Empty;
+					base.Id = Guid.Empty;
 				}
-				this.OnPropertyChanged("AccountId");
+				OnPropertyChanged("AccountId");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("accountid")]
-		public override System.Guid Id
+		public override Guid Id
 		{
 			get
 			{
@@ -613,7 +613,7 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.AccountId = value;
+				AccountId = value;
 			}
 		}
 		
@@ -625,13 +625,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("accountnumber");
+				return GetAttributeValue<string>("accountnumber");
 			}
 			set
 			{
-				this.OnPropertyChanging("AccountNumber");
-				this.SetAttributeValue("accountnumber", value);
-				this.OnPropertyChanged("AccountNumber");
+				OnPropertyChanging("AccountNumber");
+				SetAttributeValue("accountnumber", value);
+				OnPropertyChanged("AccountNumber");
 			}
 		}
 		
@@ -647,9 +647,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("AccountRatingCode");
-				this.SetAttributeValue("accountratingcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("AccountRatingCode");
+				OnPropertyChanging("AccountRatingCode");
+				SetAttributeValue("accountratingcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("AccountRatingCode");
 			}
 		}
 		
@@ -657,17 +657,17 @@ namespace Dataverse_api.Entities
 		/// Unique identifier for address 1.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_addressid")]
-		public System.Nullable<System.Guid> Address1_AddressId
+		public Nullable<Guid> Address1_AddressId
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("address1_addressid");
+				return GetAttributeValue<Nullable<Guid>>("address1_addressid");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address1_AddressId");
-				this.SetAttributeValue("address1_addressid", value);
-				this.OnPropertyChanged("Address1_AddressId");
+				OnPropertyChanging("Address1_AddressId");
+				SetAttributeValue("address1_addressid", value);
+				OnPropertyChanged("Address1_AddressId");
 			}
 		}
 		
@@ -683,9 +683,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("Address1_AddressTypeCode");
-				this.SetAttributeValue("address1_addresstypecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("Address1_AddressTypeCode");
+				OnPropertyChanging("Address1_AddressTypeCode");
+				SetAttributeValue("address1_addresstypecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("Address1_AddressTypeCode");
 			}
 		}
 		
@@ -697,13 +697,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address1_city");
+				return GetAttributeValue<string>("address1_city");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address1_City");
-				this.SetAttributeValue("address1_city", value);
-				this.OnPropertyChanged("Address1_City");
+				OnPropertyChanging("Address1_City");
+				SetAttributeValue("address1_city", value);
+				OnPropertyChanged("Address1_City");
 			}
 		}
 		
@@ -715,7 +715,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address1_composite");
+				return GetAttributeValue<string>("address1_composite");
 			}
 		}
 		
@@ -727,13 +727,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address1_country");
+				return GetAttributeValue<string>("address1_country");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address1_Country");
-				this.SetAttributeValue("address1_country", value);
-				this.OnPropertyChanged("Address1_Country");
+				OnPropertyChanging("Address1_Country");
+				SetAttributeValue("address1_country", value);
+				OnPropertyChanged("Address1_Country");
 			}
 		}
 		
@@ -745,13 +745,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address1_county");
+				return GetAttributeValue<string>("address1_county");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address1_County");
-				this.SetAttributeValue("address1_county", value);
-				this.OnPropertyChanged("Address1_County");
+				OnPropertyChanging("Address1_County");
+				SetAttributeValue("address1_county", value);
+				OnPropertyChanged("Address1_County");
 			}
 		}
 		
@@ -763,13 +763,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address1_fax");
+				return GetAttributeValue<string>("address1_fax");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address1_Fax");
-				this.SetAttributeValue("address1_fax", value);
-				this.OnPropertyChanged("Address1_Fax");
+				OnPropertyChanging("Address1_Fax");
+				SetAttributeValue("address1_fax", value);
+				OnPropertyChanged("Address1_Fax");
 			}
 		}
 		
@@ -785,9 +785,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("Address1_FreightTermsCode");
-				this.SetAttributeValue("address1_freighttermscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("Address1_FreightTermsCode");
+				OnPropertyChanging("Address1_FreightTermsCode");
+				SetAttributeValue("address1_freighttermscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("Address1_FreightTermsCode");
 			}
 		}
 		
@@ -795,17 +795,17 @@ namespace Dataverse_api.Entities
 		/// Type the latitude value for the primary address for use in mapping and other applications.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_latitude")]
-		public System.Nullable<double> Address1_Latitude
+		public Nullable<double> Address1_Latitude
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<double>>("address1_latitude");
+				return GetAttributeValue<Nullable<double>>("address1_latitude");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address1_Latitude");
-				this.SetAttributeValue("address1_latitude", value);
-				this.OnPropertyChanged("Address1_Latitude");
+				OnPropertyChanging("Address1_Latitude");
+				SetAttributeValue("address1_latitude", value);
+				OnPropertyChanged("Address1_Latitude");
 			}
 		}
 		
@@ -817,13 +817,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address1_line1");
+				return GetAttributeValue<string>("address1_line1");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address1_Line1");
-				this.SetAttributeValue("address1_line1", value);
-				this.OnPropertyChanged("Address1_Line1");
+				OnPropertyChanging("Address1_Line1");
+				SetAttributeValue("address1_line1", value);
+				OnPropertyChanged("Address1_Line1");
 			}
 		}
 		
@@ -835,13 +835,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address1_line2");
+				return GetAttributeValue<string>("address1_line2");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address1_Line2");
-				this.SetAttributeValue("address1_line2", value);
-				this.OnPropertyChanged("Address1_Line2");
+				OnPropertyChanging("Address1_Line2");
+				SetAttributeValue("address1_line2", value);
+				OnPropertyChanged("Address1_Line2");
 			}
 		}
 		
@@ -853,13 +853,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address1_line3");
+				return GetAttributeValue<string>("address1_line3");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address1_Line3");
-				this.SetAttributeValue("address1_line3", value);
-				this.OnPropertyChanged("Address1_Line3");
+				OnPropertyChanging("Address1_Line3");
+				SetAttributeValue("address1_line3", value);
+				OnPropertyChanged("Address1_Line3");
 			}
 		}
 		
@@ -867,17 +867,17 @@ namespace Dataverse_api.Entities
 		/// Type the longitude value for the primary address for use in mapping and other applications.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_longitude")]
-		public System.Nullable<double> Address1_Longitude
+		public Nullable<double> Address1_Longitude
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<double>>("address1_longitude");
+				return GetAttributeValue<Nullable<double>>("address1_longitude");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address1_Longitude");
-				this.SetAttributeValue("address1_longitude", value);
-				this.OnPropertyChanged("Address1_Longitude");
+				OnPropertyChanging("Address1_Longitude");
+				SetAttributeValue("address1_longitude", value);
+				OnPropertyChanged("Address1_Longitude");
 			}
 		}
 		
@@ -889,13 +889,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address1_name");
+				return GetAttributeValue<string>("address1_name");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address1_Name");
-				this.SetAttributeValue("address1_name", value);
-				this.OnPropertyChanged("Address1_Name");
+				OnPropertyChanging("Address1_Name");
+				SetAttributeValue("address1_name", value);
+				OnPropertyChanged("Address1_Name");
 			}
 		}
 		
@@ -907,13 +907,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address1_postalcode");
+				return GetAttributeValue<string>("address1_postalcode");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address1_PostalCode");
-				this.SetAttributeValue("address1_postalcode", value);
-				this.OnPropertyChanged("Address1_PostalCode");
+				OnPropertyChanging("Address1_PostalCode");
+				SetAttributeValue("address1_postalcode", value);
+				OnPropertyChanged("Address1_PostalCode");
 			}
 		}
 		
@@ -925,13 +925,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address1_postofficebox");
+				return GetAttributeValue<string>("address1_postofficebox");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address1_PostOfficeBox");
-				this.SetAttributeValue("address1_postofficebox", value);
-				this.OnPropertyChanged("Address1_PostOfficeBox");
+				OnPropertyChanging("Address1_PostOfficeBox");
+				SetAttributeValue("address1_postofficebox", value);
+				OnPropertyChanged("Address1_PostOfficeBox");
 			}
 		}
 		
@@ -943,13 +943,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address1_primarycontactname");
+				return GetAttributeValue<string>("address1_primarycontactname");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address1_PrimaryContactName");
-				this.SetAttributeValue("address1_primarycontactname", value);
-				this.OnPropertyChanged("Address1_PrimaryContactName");
+				OnPropertyChanging("Address1_PrimaryContactName");
+				SetAttributeValue("address1_primarycontactname", value);
+				OnPropertyChanged("Address1_PrimaryContactName");
 			}
 		}
 		
@@ -965,9 +965,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("Address1_ShippingMethodCode");
-				this.SetAttributeValue("address1_shippingmethodcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("Address1_ShippingMethodCode");
+				OnPropertyChanging("Address1_ShippingMethodCode");
+				SetAttributeValue("address1_shippingmethodcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("Address1_ShippingMethodCode");
 			}
 		}
 		
@@ -979,13 +979,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address1_stateorprovince");
+				return GetAttributeValue<string>("address1_stateorprovince");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address1_StateOrProvince");
-				this.SetAttributeValue("address1_stateorprovince", value);
-				this.OnPropertyChanged("Address1_StateOrProvince");
+				OnPropertyChanging("Address1_StateOrProvince");
+				SetAttributeValue("address1_stateorprovince", value);
+				OnPropertyChanged("Address1_StateOrProvince");
 			}
 		}
 		
@@ -997,13 +997,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address1_telephone1");
+				return GetAttributeValue<string>("address1_telephone1");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address1_Telephone1");
-				this.SetAttributeValue("address1_telephone1", value);
-				this.OnPropertyChanged("Address1_Telephone1");
+				OnPropertyChanging("Address1_Telephone1");
+				SetAttributeValue("address1_telephone1", value);
+				OnPropertyChanged("Address1_Telephone1");
 			}
 		}
 		
@@ -1015,13 +1015,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address1_telephone2");
+				return GetAttributeValue<string>("address1_telephone2");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address1_Telephone2");
-				this.SetAttributeValue("address1_telephone2", value);
-				this.OnPropertyChanged("Address1_Telephone2");
+				OnPropertyChanging("Address1_Telephone2");
+				SetAttributeValue("address1_telephone2", value);
+				OnPropertyChanged("Address1_Telephone2");
 			}
 		}
 		
@@ -1033,13 +1033,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address1_telephone3");
+				return GetAttributeValue<string>("address1_telephone3");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address1_Telephone3");
-				this.SetAttributeValue("address1_telephone3", value);
-				this.OnPropertyChanged("Address1_Telephone3");
+				OnPropertyChanging("Address1_Telephone3");
+				SetAttributeValue("address1_telephone3", value);
+				OnPropertyChanged("Address1_Telephone3");
 			}
 		}
 		
@@ -1051,13 +1051,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address1_upszone");
+				return GetAttributeValue<string>("address1_upszone");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address1_UPSZone");
-				this.SetAttributeValue("address1_upszone", value);
-				this.OnPropertyChanged("Address1_UPSZone");
+				OnPropertyChanging("Address1_UPSZone");
+				SetAttributeValue("address1_upszone", value);
+				OnPropertyChanged("Address1_UPSZone");
 			}
 		}
 		
@@ -1065,17 +1065,17 @@ namespace Dataverse_api.Entities
 		/// Select the time zone, or UTC offset, for this address so that other people can reference it when they contact someone at this address.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_utcoffset")]
-		public System.Nullable<int> Address1_UTCOffset
+		public Nullable<int> Address1_UTCOffset
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("address1_utcoffset");
+				return GetAttributeValue<Nullable<int>>("address1_utcoffset");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address1_UTCOffset");
-				this.SetAttributeValue("address1_utcoffset", value);
-				this.OnPropertyChanged("Address1_UTCOffset");
+				OnPropertyChanging("Address1_UTCOffset");
+				SetAttributeValue("address1_utcoffset", value);
+				OnPropertyChanged("Address1_UTCOffset");
 			}
 		}
 		
@@ -1083,17 +1083,17 @@ namespace Dataverse_api.Entities
 		/// Unique identifier for address 2.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_addressid")]
-		public System.Nullable<System.Guid> Address2_AddressId
+		public Nullable<Guid> Address2_AddressId
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("address2_addressid");
+				return GetAttributeValue<Nullable<Guid>>("address2_addressid");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address2_AddressId");
-				this.SetAttributeValue("address2_addressid", value);
-				this.OnPropertyChanged("Address2_AddressId");
+				OnPropertyChanging("Address2_AddressId");
+				SetAttributeValue("address2_addressid", value);
+				OnPropertyChanged("Address2_AddressId");
 			}
 		}
 		
@@ -1109,9 +1109,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("Address2_AddressTypeCode");
-				this.SetAttributeValue("address2_addresstypecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("Address2_AddressTypeCode");
+				OnPropertyChanging("Address2_AddressTypeCode");
+				SetAttributeValue("address2_addresstypecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("Address2_AddressTypeCode");
 			}
 		}
 		
@@ -1123,13 +1123,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address2_city");
+				return GetAttributeValue<string>("address2_city");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address2_City");
-				this.SetAttributeValue("address2_city", value);
-				this.OnPropertyChanged("Address2_City");
+				OnPropertyChanging("Address2_City");
+				SetAttributeValue("address2_city", value);
+				OnPropertyChanged("Address2_City");
 			}
 		}
 		
@@ -1141,7 +1141,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address2_composite");
+				return GetAttributeValue<string>("address2_composite");
 			}
 		}
 		
@@ -1153,13 +1153,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address2_country");
+				return GetAttributeValue<string>("address2_country");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address2_Country");
-				this.SetAttributeValue("address2_country", value);
-				this.OnPropertyChanged("Address2_Country");
+				OnPropertyChanging("Address2_Country");
+				SetAttributeValue("address2_country", value);
+				OnPropertyChanged("Address2_Country");
 			}
 		}
 		
@@ -1171,13 +1171,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address2_county");
+				return GetAttributeValue<string>("address2_county");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address2_County");
-				this.SetAttributeValue("address2_county", value);
-				this.OnPropertyChanged("Address2_County");
+				OnPropertyChanging("Address2_County");
+				SetAttributeValue("address2_county", value);
+				OnPropertyChanged("Address2_County");
 			}
 		}
 		
@@ -1189,13 +1189,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address2_fax");
+				return GetAttributeValue<string>("address2_fax");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address2_Fax");
-				this.SetAttributeValue("address2_fax", value);
-				this.OnPropertyChanged("Address2_Fax");
+				OnPropertyChanging("Address2_Fax");
+				SetAttributeValue("address2_fax", value);
+				OnPropertyChanged("Address2_Fax");
 			}
 		}
 		
@@ -1211,9 +1211,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("Address2_FreightTermsCode");
-				this.SetAttributeValue("address2_freighttermscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("Address2_FreightTermsCode");
+				OnPropertyChanging("Address2_FreightTermsCode");
+				SetAttributeValue("address2_freighttermscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("Address2_FreightTermsCode");
 			}
 		}
 		
@@ -1221,17 +1221,17 @@ namespace Dataverse_api.Entities
 		/// Type the latitude value for the secondary address for use in mapping and other applications.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_latitude")]
-		public System.Nullable<double> Address2_Latitude
+		public Nullable<double> Address2_Latitude
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<double>>("address2_latitude");
+				return GetAttributeValue<Nullable<double>>("address2_latitude");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address2_Latitude");
-				this.SetAttributeValue("address2_latitude", value);
-				this.OnPropertyChanged("Address2_Latitude");
+				OnPropertyChanging("Address2_Latitude");
+				SetAttributeValue("address2_latitude", value);
+				OnPropertyChanged("Address2_Latitude");
 			}
 		}
 		
@@ -1243,13 +1243,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address2_line1");
+				return GetAttributeValue<string>("address2_line1");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address2_Line1");
-				this.SetAttributeValue("address2_line1", value);
-				this.OnPropertyChanged("Address2_Line1");
+				OnPropertyChanging("Address2_Line1");
+				SetAttributeValue("address2_line1", value);
+				OnPropertyChanged("Address2_Line1");
 			}
 		}
 		
@@ -1261,13 +1261,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address2_line2");
+				return GetAttributeValue<string>("address2_line2");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address2_Line2");
-				this.SetAttributeValue("address2_line2", value);
-				this.OnPropertyChanged("Address2_Line2");
+				OnPropertyChanging("Address2_Line2");
+				SetAttributeValue("address2_line2", value);
+				OnPropertyChanged("Address2_Line2");
 			}
 		}
 		
@@ -1279,13 +1279,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address2_line3");
+				return GetAttributeValue<string>("address2_line3");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address2_Line3");
-				this.SetAttributeValue("address2_line3", value);
-				this.OnPropertyChanged("Address2_Line3");
+				OnPropertyChanging("Address2_Line3");
+				SetAttributeValue("address2_line3", value);
+				OnPropertyChanged("Address2_Line3");
 			}
 		}
 		
@@ -1293,17 +1293,17 @@ namespace Dataverse_api.Entities
 		/// Type the longitude value for the secondary address for use in mapping and other applications.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_longitude")]
-		public System.Nullable<double> Address2_Longitude
+		public Nullable<double> Address2_Longitude
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<double>>("address2_longitude");
+				return GetAttributeValue<Nullable<double>>("address2_longitude");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address2_Longitude");
-				this.SetAttributeValue("address2_longitude", value);
-				this.OnPropertyChanged("Address2_Longitude");
+				OnPropertyChanging("Address2_Longitude");
+				SetAttributeValue("address2_longitude", value);
+				OnPropertyChanged("Address2_Longitude");
 			}
 		}
 		
@@ -1315,13 +1315,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address2_name");
+				return GetAttributeValue<string>("address2_name");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address2_Name");
-				this.SetAttributeValue("address2_name", value);
-				this.OnPropertyChanged("Address2_Name");
+				OnPropertyChanging("Address2_Name");
+				SetAttributeValue("address2_name", value);
+				OnPropertyChanged("Address2_Name");
 			}
 		}
 		
@@ -1333,13 +1333,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address2_postalcode");
+				return GetAttributeValue<string>("address2_postalcode");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address2_PostalCode");
-				this.SetAttributeValue("address2_postalcode", value);
-				this.OnPropertyChanged("Address2_PostalCode");
+				OnPropertyChanging("Address2_PostalCode");
+				SetAttributeValue("address2_postalcode", value);
+				OnPropertyChanged("Address2_PostalCode");
 			}
 		}
 		
@@ -1351,13 +1351,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address2_postofficebox");
+				return GetAttributeValue<string>("address2_postofficebox");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address2_PostOfficeBox");
-				this.SetAttributeValue("address2_postofficebox", value);
-				this.OnPropertyChanged("Address2_PostOfficeBox");
+				OnPropertyChanging("Address2_PostOfficeBox");
+				SetAttributeValue("address2_postofficebox", value);
+				OnPropertyChanged("Address2_PostOfficeBox");
 			}
 		}
 		
@@ -1369,13 +1369,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address2_primarycontactname");
+				return GetAttributeValue<string>("address2_primarycontactname");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address2_PrimaryContactName");
-				this.SetAttributeValue("address2_primarycontactname", value);
-				this.OnPropertyChanged("Address2_PrimaryContactName");
+				OnPropertyChanging("Address2_PrimaryContactName");
+				SetAttributeValue("address2_primarycontactname", value);
+				OnPropertyChanged("Address2_PrimaryContactName");
 			}
 		}
 		
@@ -1391,9 +1391,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("Address2_ShippingMethodCode");
-				this.SetAttributeValue("address2_shippingmethodcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("Address2_ShippingMethodCode");
+				OnPropertyChanging("Address2_ShippingMethodCode");
+				SetAttributeValue("address2_shippingmethodcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("Address2_ShippingMethodCode");
 			}
 		}
 		
@@ -1405,13 +1405,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address2_stateorprovince");
+				return GetAttributeValue<string>("address2_stateorprovince");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address2_StateOrProvince");
-				this.SetAttributeValue("address2_stateorprovince", value);
-				this.OnPropertyChanged("Address2_StateOrProvince");
+				OnPropertyChanging("Address2_StateOrProvince");
+				SetAttributeValue("address2_stateorprovince", value);
+				OnPropertyChanged("Address2_StateOrProvince");
 			}
 		}
 		
@@ -1423,13 +1423,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address2_telephone1");
+				return GetAttributeValue<string>("address2_telephone1");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address2_Telephone1");
-				this.SetAttributeValue("address2_telephone1", value);
-				this.OnPropertyChanged("Address2_Telephone1");
+				OnPropertyChanging("Address2_Telephone1");
+				SetAttributeValue("address2_telephone1", value);
+				OnPropertyChanged("Address2_Telephone1");
 			}
 		}
 		
@@ -1441,13 +1441,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address2_telephone2");
+				return GetAttributeValue<string>("address2_telephone2");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address2_Telephone2");
-				this.SetAttributeValue("address2_telephone2", value);
-				this.OnPropertyChanged("Address2_Telephone2");
+				OnPropertyChanging("Address2_Telephone2");
+				SetAttributeValue("address2_telephone2", value);
+				OnPropertyChanged("Address2_Telephone2");
 			}
 		}
 		
@@ -1459,13 +1459,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address2_telephone3");
+				return GetAttributeValue<string>("address2_telephone3");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address2_Telephone3");
-				this.SetAttributeValue("address2_telephone3", value);
-				this.OnPropertyChanged("Address2_Telephone3");
+				OnPropertyChanging("Address2_Telephone3");
+				SetAttributeValue("address2_telephone3", value);
+				OnPropertyChanged("Address2_Telephone3");
 			}
 		}
 		
@@ -1477,13 +1477,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("address2_upszone");
+				return GetAttributeValue<string>("address2_upszone");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address2_UPSZone");
-				this.SetAttributeValue("address2_upszone", value);
-				this.OnPropertyChanged("Address2_UPSZone");
+				OnPropertyChanging("Address2_UPSZone");
+				SetAttributeValue("address2_upszone", value);
+				OnPropertyChanged("Address2_UPSZone");
 			}
 		}
 		
@@ -1491,17 +1491,17 @@ namespace Dataverse_api.Entities
 		/// Select the time zone, or UTC offset, for this address so that other people can reference it when they contact someone at this address.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_utcoffset")]
-		public System.Nullable<int> Address2_UTCOffset
+		public Nullable<int> Address2_UTCOffset
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("address2_utcoffset");
+				return GetAttributeValue<Nullable<int>>("address2_utcoffset");
 			}
 			set
 			{
-				this.OnPropertyChanging("Address2_UTCOffset");
-				this.SetAttributeValue("address2_utcoffset", value);
-				this.OnPropertyChanged("Address2_UTCOffset");
+				OnPropertyChanging("Address2_UTCOffset");
+				SetAttributeValue("address2_utcoffset", value);
+				OnPropertyChanged("Address2_UTCOffset");
 			}
 		}
 		
@@ -1510,13 +1510,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("adx_createdbyipaddress");
+				return GetAttributeValue<string>("adx_createdbyipaddress");
 			}
 			set
 			{
-				this.OnPropertyChanging("Adx_CreatedByIPAddress");
-				this.SetAttributeValue("adx_createdbyipaddress", value);
-				this.OnPropertyChanged("Adx_CreatedByIPAddress");
+				OnPropertyChanging("Adx_CreatedByIPAddress");
+				SetAttributeValue("adx_createdbyipaddress", value);
+				OnPropertyChanged("Adx_CreatedByIPAddress");
 			}
 		}
 		
@@ -1525,13 +1525,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("adx_createdbyusername");
+				return GetAttributeValue<string>("adx_createdbyusername");
 			}
 			set
 			{
-				this.OnPropertyChanging("Adx_CreatedByUsername");
-				this.SetAttributeValue("adx_createdbyusername", value);
-				this.OnPropertyChanged("Adx_CreatedByUsername");
+				OnPropertyChanging("Adx_CreatedByUsername");
+				SetAttributeValue("adx_createdbyusername", value);
+				OnPropertyChanged("Adx_CreatedByUsername");
 			}
 		}
 		
@@ -1540,13 +1540,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("adx_modifiedbyipaddress");
+				return GetAttributeValue<string>("adx_modifiedbyipaddress");
 			}
 			set
 			{
-				this.OnPropertyChanging("Adx_ModifiedByIPAddress");
-				this.SetAttributeValue("adx_modifiedbyipaddress", value);
-				this.OnPropertyChanged("Adx_ModifiedByIPAddress");
+				OnPropertyChanging("Adx_ModifiedByIPAddress");
+				SetAttributeValue("adx_modifiedbyipaddress", value);
+				OnPropertyChanged("Adx_ModifiedByIPAddress");
 			}
 		}
 		
@@ -1555,13 +1555,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("adx_modifiedbyusername");
+				return GetAttributeValue<string>("adx_modifiedbyusername");
 			}
 			set
 			{
-				this.OnPropertyChanging("Adx_ModifiedByUsername");
-				this.SetAttributeValue("adx_modifiedbyusername", value);
-				this.OnPropertyChanged("Adx_ModifiedByUsername");
+				OnPropertyChanging("Adx_ModifiedByUsername");
+				SetAttributeValue("adx_modifiedbyusername", value);
+				OnPropertyChanged("Adx_ModifiedByUsername");
 			}
 		}
 		
@@ -1573,7 +1573,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("aging30");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.Money>("aging30");
 			}
 		}
 		
@@ -1585,7 +1585,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("aging30_base");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.Money>("aging30_base");
 			}
 		}
 		
@@ -1597,7 +1597,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("aging60");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.Money>("aging60");
 			}
 		}
 		
@@ -1609,7 +1609,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("aging60_base");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.Money>("aging60_base");
 			}
 		}
 		
@@ -1621,7 +1621,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("aging90");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.Money>("aging90");
 			}
 		}
 		
@@ -1633,7 +1633,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("aging90_base");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.Money>("aging90_base");
 			}
 		}
 		
@@ -1649,9 +1649,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("BusinessTypeCode");
-				this.SetAttributeValue("businesstypecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("BusinessTypeCode");
+				OnPropertyChanging("BusinessTypeCode");
+				SetAttributeValue("businesstypecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("BusinessTypeCode");
 			}
 		}
 		
@@ -1663,7 +1663,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
 			}
 		}
 		
@@ -1675,7 +1675,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdbyexternalparty");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdbyexternalparty");
 			}
 		}
 		
@@ -1683,11 +1683,11 @@ namespace Dataverse_api.Entities
 		/// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
-		public System.Nullable<System.DateTime> CreatedOn
+		public Nullable<DateTime> CreatedOn
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
+				return GetAttributeValue<Nullable<DateTime>>("createdon");
 			}
 		}
 		
@@ -1699,7 +1699,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdonbehalfby");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdonbehalfby");
 			}
 		}
 		
@@ -1711,13 +1711,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("creditlimit");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.Money>("creditlimit");
 			}
 			set
 			{
-				this.OnPropertyChanging("CreditLimit");
-				this.SetAttributeValue("creditlimit", value);
-				this.OnPropertyChanged("CreditLimit");
+				OnPropertyChanging("CreditLimit");
+				SetAttributeValue("creditlimit", value);
+				OnPropertyChanged("CreditLimit");
 			}
 		}
 		
@@ -1729,7 +1729,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("creditlimit_base");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.Money>("creditlimit_base");
 			}
 		}
 		
@@ -1737,17 +1737,17 @@ namespace Dataverse_api.Entities
 		/// Select whether the credit for the account is on hold. This is a useful reference while addressing the invoice and accounting issues with the customer.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("creditonhold")]
-		public System.Nullable<bool> CreditOnHold
+		public Nullable<bool> CreditOnHold
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("creditonhold");
+				return GetAttributeValue<Nullable<bool>>("creditonhold");
 			}
 			set
 			{
-				this.OnPropertyChanging("CreditOnHold");
-				this.SetAttributeValue("creditonhold", value);
-				this.OnPropertyChanged("CreditOnHold");
+				OnPropertyChanging("CreditOnHold");
+				SetAttributeValue("creditonhold", value);
+				OnPropertyChanged("CreditOnHold");
 			}
 		}
 		
@@ -1763,9 +1763,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("CustomerSizeCode");
-				this.SetAttributeValue("customersizecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("CustomerSizeCode");
+				OnPropertyChanging("CustomerSizeCode");
+				SetAttributeValue("customersizecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("CustomerSizeCode");
 			}
 		}
 		
@@ -1781,9 +1781,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("CustomerTypeCode");
-				this.SetAttributeValue("customertypecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("CustomerTypeCode");
+				OnPropertyChanging("CustomerTypeCode");
+				SetAttributeValue("customertypecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("CustomerTypeCode");
 			}
 		}
 		
@@ -1795,13 +1795,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("defaultpricelevelid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("defaultpricelevelid");
 			}
 			set
 			{
-				this.OnPropertyChanging("DefaultPriceLevelId");
-				this.SetAttributeValue("defaultpricelevelid", value);
-				this.OnPropertyChanged("DefaultPriceLevelId");
+				OnPropertyChanging("DefaultPriceLevelId");
+				SetAttributeValue("defaultpricelevelid", value);
+				OnPropertyChanged("DefaultPriceLevelId");
 			}
 		}
 		
@@ -1813,13 +1813,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("description");
+				return GetAttributeValue<string>("description");
 			}
 			set
 			{
-				this.OnPropertyChanging("Description");
-				this.SetAttributeValue("description", value);
-				this.OnPropertyChanged("Description");
+				OnPropertyChanging("Description");
+				SetAttributeValue("description", value);
+				OnPropertyChanged("Description");
 			}
 		}
 		
@@ -1827,17 +1827,17 @@ namespace Dataverse_api.Entities
 		/// Select whether the account allows bulk email sent through campaigns. If Do Not Allow is selected, the account can be added to marketing lists, but is excluded from email.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotbulkemail")]
-		public System.Nullable<bool> DoNotBulkEMail
+		public Nullable<bool> DoNotBulkEMail
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("donotbulkemail");
+				return GetAttributeValue<Nullable<bool>>("donotbulkemail");
 			}
 			set
 			{
-				this.OnPropertyChanging("DoNotBulkEMail");
-				this.SetAttributeValue("donotbulkemail", value);
-				this.OnPropertyChanged("DoNotBulkEMail");
+				OnPropertyChanging("DoNotBulkEMail");
+				SetAttributeValue("donotbulkemail", value);
+				OnPropertyChanged("DoNotBulkEMail");
 			}
 		}
 		
@@ -1845,17 +1845,17 @@ namespace Dataverse_api.Entities
 		/// Select whether the account allows bulk postal mail sent through marketing campaigns or quick campaigns. If Do Not Allow is selected, the account can be added to marketing lists, but will be excluded from the postal mail.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotbulkpostalmail")]
-		public System.Nullable<bool> DoNotBulkPostalMail
+		public Nullable<bool> DoNotBulkPostalMail
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("donotbulkpostalmail");
+				return GetAttributeValue<Nullable<bool>>("donotbulkpostalmail");
 			}
 			set
 			{
-				this.OnPropertyChanging("DoNotBulkPostalMail");
-				this.SetAttributeValue("donotbulkpostalmail", value);
-				this.OnPropertyChanged("DoNotBulkPostalMail");
+				OnPropertyChanging("DoNotBulkPostalMail");
+				SetAttributeValue("donotbulkpostalmail", value);
+				OnPropertyChanged("DoNotBulkPostalMail");
 			}
 		}
 		
@@ -1863,17 +1863,17 @@ namespace Dataverse_api.Entities
 		/// Select whether the account allows direct email sent from Microsoft Dynamics 365.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotemail")]
-		public System.Nullable<bool> DoNotEMail
+		public Nullable<bool> DoNotEMail
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("donotemail");
+				return GetAttributeValue<Nullable<bool>>("donotemail");
 			}
 			set
 			{
-				this.OnPropertyChanging("DoNotEMail");
-				this.SetAttributeValue("donotemail", value);
-				this.OnPropertyChanged("DoNotEMail");
+				OnPropertyChanging("DoNotEMail");
+				SetAttributeValue("donotemail", value);
+				OnPropertyChanged("DoNotEMail");
 			}
 		}
 		
@@ -1881,17 +1881,17 @@ namespace Dataverse_api.Entities
 		/// Select whether the account allows faxes. If Do Not Allow is selected, the account will be excluded from fax activities distributed in marketing campaigns.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotfax")]
-		public System.Nullable<bool> DoNotFax
+		public Nullable<bool> DoNotFax
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("donotfax");
+				return GetAttributeValue<Nullable<bool>>("donotfax");
 			}
 			set
 			{
-				this.OnPropertyChanging("DoNotFax");
-				this.SetAttributeValue("donotfax", value);
-				this.OnPropertyChanged("DoNotFax");
+				OnPropertyChanging("DoNotFax");
+				SetAttributeValue("donotfax", value);
+				OnPropertyChanged("DoNotFax");
 			}
 		}
 		
@@ -1899,17 +1899,17 @@ namespace Dataverse_api.Entities
 		/// Select whether the account allows phone calls. If Do Not Allow is selected, the account will be excluded from phone call activities distributed in marketing campaigns.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotphone")]
-		public System.Nullable<bool> DoNotPhone
+		public Nullable<bool> DoNotPhone
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("donotphone");
+				return GetAttributeValue<Nullable<bool>>("donotphone");
 			}
 			set
 			{
-				this.OnPropertyChanging("DoNotPhone");
-				this.SetAttributeValue("donotphone", value);
-				this.OnPropertyChanged("DoNotPhone");
+				OnPropertyChanging("DoNotPhone");
+				SetAttributeValue("donotphone", value);
+				OnPropertyChanged("DoNotPhone");
 			}
 		}
 		
@@ -1917,17 +1917,17 @@ namespace Dataverse_api.Entities
 		/// Select whether the account allows direct mail. If Do Not Allow is selected, the account will be excluded from letter activities distributed in marketing campaigns.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotpostalmail")]
-		public System.Nullable<bool> DoNotPostalMail
+		public Nullable<bool> DoNotPostalMail
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("donotpostalmail");
+				return GetAttributeValue<Nullable<bool>>("donotpostalmail");
 			}
 			set
 			{
-				this.OnPropertyChanging("DoNotPostalMail");
-				this.SetAttributeValue("donotpostalmail", value);
-				this.OnPropertyChanged("DoNotPostalMail");
+				OnPropertyChanging("DoNotPostalMail");
+				SetAttributeValue("donotpostalmail", value);
+				OnPropertyChanged("DoNotPostalMail");
 			}
 		}
 		
@@ -1935,17 +1935,17 @@ namespace Dataverse_api.Entities
 		/// Select whether the account accepts marketing materials, such as brochures or catalogs.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotsendmm")]
-		public System.Nullable<bool> DoNotSendMM
+		public Nullable<bool> DoNotSendMM
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("donotsendmm");
+				return GetAttributeValue<Nullable<bool>>("donotsendmm");
 			}
 			set
 			{
-				this.OnPropertyChanging("DoNotSendMM");
-				this.SetAttributeValue("donotsendmm", value);
-				this.OnPropertyChanged("DoNotSendMM");
+				OnPropertyChanging("DoNotSendMM");
+				SetAttributeValue("donotsendmm", value);
+				OnPropertyChanged("DoNotSendMM");
 			}
 		}
 		
@@ -1957,13 +1957,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("emailaddress1");
+				return GetAttributeValue<string>("emailaddress1");
 			}
 			set
 			{
-				this.OnPropertyChanging("EMailAddress1");
-				this.SetAttributeValue("emailaddress1", value);
-				this.OnPropertyChanged("EMailAddress1");
+				OnPropertyChanging("EMailAddress1");
+				SetAttributeValue("emailaddress1", value);
+				OnPropertyChanged("EMailAddress1");
 			}
 		}
 		
@@ -1975,13 +1975,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("emailaddress2");
+				return GetAttributeValue<string>("emailaddress2");
 			}
 			set
 			{
-				this.OnPropertyChanging("EMailAddress2");
-				this.SetAttributeValue("emailaddress2", value);
-				this.OnPropertyChanged("EMailAddress2");
+				OnPropertyChanging("EMailAddress2");
+				SetAttributeValue("emailaddress2", value);
+				OnPropertyChanged("EMailAddress2");
 			}
 		}
 		
@@ -1993,13 +1993,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("emailaddress3");
+				return GetAttributeValue<string>("emailaddress3");
 			}
 			set
 			{
-				this.OnPropertyChanging("EMailAddress3");
-				this.SetAttributeValue("emailaddress3", value);
-				this.OnPropertyChanged("EMailAddress3");
+				OnPropertyChanging("EMailAddress3");
+				SetAttributeValue("emailaddress3", value);
+				OnPropertyChanged("EMailAddress3");
 			}
 		}
 		
@@ -2011,22 +2011,22 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<byte[]>("entityimage");
+				return GetAttributeValue<byte[]>("entityimage");
 			}
 			set
 			{
-				this.OnPropertyChanging("EntityImage");
-				this.SetAttributeValue("entityimage", value);
-				this.OnPropertyChanged("EntityImage");
+				OnPropertyChanging("EntityImage");
+				SetAttributeValue("entityimage", value);
+				OnPropertyChanged("EntityImage");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("entityimage_timestamp")]
-		public System.Nullable<long> EntityImage_Timestamp
+		public Nullable<long> EntityImage_Timestamp
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<long>>("entityimage_timestamp");
+				return GetAttributeValue<Nullable<long>>("entityimage_timestamp");
 			}
 		}
 		
@@ -2035,7 +2035,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("entityimage_url");
+				return GetAttributeValue<string>("entityimage_url");
 			}
 		}
 		
@@ -2043,11 +2043,11 @@ namespace Dataverse_api.Entities
 		/// For internal use only.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("entityimageid")]
-		public System.Nullable<System.Guid> EntityImageId
+		public Nullable<Guid> EntityImageId
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("entityimageid");
+				return GetAttributeValue<Nullable<Guid>>("entityimageid");
 			}
 		}
 		
@@ -2055,11 +2055,11 @@ namespace Dataverse_api.Entities
 		/// Shows the conversion rate of the record's currency. The exchange rate is used to convert all money fields in the record from the local currency to the system's default currency.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangerate")]
-		public System.Nullable<decimal> ExchangeRate
+		public Nullable<decimal> ExchangeRate
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<decimal>>("exchangerate");
+				return GetAttributeValue<Nullable<decimal>>("exchangerate");
 			}
 		}
 		
@@ -2071,13 +2071,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("fax");
+				return GetAttributeValue<string>("fax");
 			}
 			set
 			{
-				this.OnPropertyChanging("Fax");
-				this.SetAttributeValue("fax", value);
-				this.OnPropertyChanged("Fax");
+				OnPropertyChanging("Fax");
+				SetAttributeValue("fax", value);
+				OnPropertyChanged("Fax");
 			}
 		}
 		
@@ -2085,17 +2085,17 @@ namespace Dataverse_api.Entities
 		/// Information about whether to allow following email activity like opens, attachment views and link clicks for emails sent to the account.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("followemail")]
-		public System.Nullable<bool> FollowEmail
+		public Nullable<bool> FollowEmail
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("followemail");
+				return GetAttributeValue<Nullable<bool>>("followemail");
 			}
 			set
 			{
-				this.OnPropertyChanging("FollowEmail");
-				this.SetAttributeValue("followemail", value);
-				this.OnPropertyChanged("FollowEmail");
+				OnPropertyChanging("FollowEmail");
+				SetAttributeValue("followemail", value);
+				OnPropertyChanged("FollowEmail");
 			}
 		}
 		
@@ -2107,13 +2107,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("ftpsiteurl");
+				return GetAttributeValue<string>("ftpsiteurl");
 			}
 			set
 			{
-				this.OnPropertyChanging("FtpSiteURL");
-				this.SetAttributeValue("ftpsiteurl", value);
-				this.OnPropertyChanged("FtpSiteURL");
+				OnPropertyChanging("FtpSiteURL");
+				SetAttributeValue("ftpsiteurl", value);
+				OnPropertyChanged("FtpSiteURL");
 			}
 		}
 		
@@ -2121,17 +2121,17 @@ namespace Dataverse_api.Entities
 		/// Unique identifier of the data import or data migration that created this record.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("importsequencenumber")]
-		public System.Nullable<int> ImportSequenceNumber
+		public Nullable<int> ImportSequenceNumber
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("importsequencenumber");
+				return GetAttributeValue<Nullable<int>>("importsequencenumber");
 			}
 			set
 			{
-				this.OnPropertyChanging("ImportSequenceNumber");
-				this.SetAttributeValue("importsequencenumber", value);
-				this.OnPropertyChanged("ImportSequenceNumber");
+				OnPropertyChanging("ImportSequenceNumber");
+				SetAttributeValue("importsequencenumber", value);
+				OnPropertyChanged("ImportSequenceNumber");
 			}
 		}
 		
@@ -2147,9 +2147,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("IndustryCode");
-				this.SetAttributeValue("industrycode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("IndustryCode");
+				OnPropertyChanging("IndustryCode");
+				SetAttributeValue("industrycode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("IndustryCode");
 			}
 		}
 		
@@ -2157,17 +2157,17 @@ namespace Dataverse_api.Entities
 		/// Contains the date and time stamp of the last on hold time.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("lastonholdtime")]
-		public System.Nullable<System.DateTime> LastOnHoldTime
+		public Nullable<DateTime> LastOnHoldTime
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.DateTime>>("lastonholdtime");
+				return GetAttributeValue<Nullable<DateTime>>("lastonholdtime");
 			}
 			set
 			{
-				this.OnPropertyChanging("LastOnHoldTime");
-				this.SetAttributeValue("lastonholdtime", value);
-				this.OnPropertyChanged("LastOnHoldTime");
+				OnPropertyChanging("LastOnHoldTime");
+				SetAttributeValue("lastonholdtime", value);
+				OnPropertyChanged("LastOnHoldTime");
 			}
 		}
 		
@@ -2175,17 +2175,17 @@ namespace Dataverse_api.Entities
 		/// Shows the date when the account was last included in a marketing campaign or quick campaign.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("lastusedincampaign")]
-		public System.Nullable<System.DateTime> LastUsedInCampaign
+		public Nullable<DateTime> LastUsedInCampaign
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.DateTime>>("lastusedincampaign");
+				return GetAttributeValue<Nullable<DateTime>>("lastusedincampaign");
 			}
 			set
 			{
-				this.OnPropertyChanging("LastUsedInCampaign");
-				this.SetAttributeValue("lastusedincampaign", value);
-				this.OnPropertyChanged("LastUsedInCampaign");
+				OnPropertyChanging("LastUsedInCampaign");
+				SetAttributeValue("lastusedincampaign", value);
+				OnPropertyChanged("LastUsedInCampaign");
 			}
 		}
 		
@@ -2197,13 +2197,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("marketcap");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.Money>("marketcap");
 			}
 			set
 			{
-				this.OnPropertyChanging("MarketCap");
-				this.SetAttributeValue("marketcap", value);
-				this.OnPropertyChanged("MarketCap");
+				OnPropertyChanging("MarketCap");
+				SetAttributeValue("marketcap", value);
+				OnPropertyChanged("MarketCap");
 			}
 		}
 		
@@ -2215,7 +2215,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("marketcap_base");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.Money>("marketcap_base");
 			}
 		}
 		
@@ -2223,17 +2223,17 @@ namespace Dataverse_api.Entities
 		/// Whether is only for marketing
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("marketingonly")]
-		public System.Nullable<bool> MarketingOnly
+		public Nullable<bool> MarketingOnly
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("marketingonly");
+				return GetAttributeValue<Nullable<bool>>("marketingonly");
 			}
 			set
 			{
-				this.OnPropertyChanging("MarketingOnly");
-				this.SetAttributeValue("marketingonly", value);
-				this.OnPropertyChanged("MarketingOnly");
+				OnPropertyChanging("MarketingOnly");
+				SetAttributeValue("marketingonly", value);
+				OnPropertyChanged("MarketingOnly");
 			}
 		}
 		
@@ -2245,7 +2245,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("masterid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("masterid");
 			}
 		}
 		
@@ -2253,11 +2253,11 @@ namespace Dataverse_api.Entities
 		/// Shows whether the account has been merged with another account.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("merged")]
-		public System.Nullable<bool> Merged
+		public Nullable<bool> Merged
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("merged");
+				return GetAttributeValue<Nullable<bool>>("merged");
 			}
 		}
 		
@@ -2269,7 +2269,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
 			}
 		}
 		
@@ -2281,7 +2281,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedbyexternalparty");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedbyexternalparty");
 			}
 		}
 		
@@ -2289,11 +2289,11 @@ namespace Dataverse_api.Entities
 		/// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
-		public System.Nullable<System.DateTime> ModifiedOn
+		public Nullable<DateTime> ModifiedOn
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.DateTime>>("modifiedon");
+				return GetAttributeValue<Nullable<DateTime>>("modifiedon");
 			}
 		}
 		
@@ -2305,7 +2305,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedonbehalfby");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedonbehalfby");
 			}
 		}
 		
@@ -2317,13 +2317,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msa_managingpartnerid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msa_managingpartnerid");
 			}
 			set
 			{
-				this.OnPropertyChanging("msa_managingpartnerid");
-				this.SetAttributeValue("msa_managingpartnerid", value);
-				this.OnPropertyChanged("msa_managingpartnerid");
+				OnPropertyChanging("msa_managingpartnerid");
+				SetAttributeValue("msa_managingpartnerid", value);
+				OnPropertyChanged("msa_managingpartnerid");
 			}
 		}
 		
@@ -2332,13 +2332,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msdyn_accountkpiid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msdyn_accountkpiid");
 			}
 			set
 			{
-				this.OnPropertyChanging("msdyn_accountkpiid");
-				this.SetAttributeValue("msdyn_accountkpiid", value);
-				this.OnPropertyChanged("msdyn_accountkpiid");
+				OnPropertyChanging("msdyn_accountkpiid");
+				SetAttributeValue("msdyn_accountkpiid", value);
+				OnPropertyChanged("msdyn_accountkpiid");
 			}
 		}
 		
@@ -2346,17 +2346,17 @@ namespace Dataverse_api.Entities
 		/// Describes whether account is opted out or not
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_gdproptout")]
-		public System.Nullable<bool> msdyn_gdproptout
+		public Nullable<bool> msdyn_gdproptout
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("msdyn_gdproptout");
+				return GetAttributeValue<Nullable<bool>>("msdyn_gdproptout");
 			}
 			set
 			{
-				this.OnPropertyChanging("msdyn_gdproptout");
-				this.SetAttributeValue("msdyn_gdproptout", value);
-				this.OnPropertyChanged("msdyn_gdproptout");
+				OnPropertyChanging("msdyn_gdproptout");
+				SetAttributeValue("msdyn_gdproptout", value);
+				OnPropertyChanged("msdyn_gdproptout");
 			}
 		}
 		
@@ -2364,17 +2364,17 @@ namespace Dataverse_api.Entities
 		/// Indicates the primary time zone that the client works on.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_primarytimezone")]
-		public System.Nullable<int> msdyn_PrimaryTimeZone
+		public Nullable<int> msdyn_PrimaryTimeZone
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("msdyn_primarytimezone");
+				return GetAttributeValue<Nullable<int>>("msdyn_primarytimezone");
 			}
 			set
 			{
-				this.OnPropertyChanging("msdyn_PrimaryTimeZone");
-				this.SetAttributeValue("msdyn_primarytimezone", value);
-				this.OnPropertyChanged("msdyn_PrimaryTimeZone");
+				OnPropertyChanging("msdyn_PrimaryTimeZone");
+				SetAttributeValue("msdyn_primarytimezone", value);
+				OnPropertyChanged("msdyn_PrimaryTimeZone");
 			}
 		}
 		
@@ -2386,13 +2386,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msdyn_salesaccelerationinsightid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msdyn_salesaccelerationinsightid");
 			}
 			set
 			{
-				this.OnPropertyChanging("msdyn_salesaccelerationinsightid");
-				this.SetAttributeValue("msdyn_salesaccelerationinsightid", value);
-				this.OnPropertyChanged("msdyn_salesaccelerationinsightid");
+				OnPropertyChanging("msdyn_salesaccelerationinsightid");
+				SetAttributeValue("msdyn_salesaccelerationinsightid", value);
+				OnPropertyChanged("msdyn_salesaccelerationinsightid");
 			}
 		}
 		
@@ -2404,13 +2404,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("name");
+				return GetAttributeValue<string>("name");
 			}
 			set
 			{
-				this.OnPropertyChanging("Name");
-				this.SetAttributeValue("name", value);
-				this.OnPropertyChanged("Name");
+				OnPropertyChanging("Name");
+				SetAttributeValue("name", value);
+				OnPropertyChanged("Name");
 			}
 		}
 		
@@ -2418,17 +2418,17 @@ namespace Dataverse_api.Entities
 		/// Type the number of employees that work at the account for use in marketing segmentation and demographic analysis.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("numberofemployees")]
-		public System.Nullable<int> NumberOfEmployees
+		public Nullable<int> NumberOfEmployees
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("numberofemployees");
+				return GetAttributeValue<Nullable<int>>("numberofemployees");
 			}
 			set
 			{
-				this.OnPropertyChanging("NumberOfEmployees");
-				this.SetAttributeValue("numberofemployees", value);
-				this.OnPropertyChanged("NumberOfEmployees");
+				OnPropertyChanging("NumberOfEmployees");
+				SetAttributeValue("numberofemployees", value);
+				OnPropertyChanged("NumberOfEmployees");
 			}
 		}
 		
@@ -2436,11 +2436,11 @@ namespace Dataverse_api.Entities
 		/// Shows how long, in minutes, that the record was on hold.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("onholdtime")]
-		public System.Nullable<int> OnHoldTime
+		public Nullable<int> OnHoldTime
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("onholdtime");
+				return GetAttributeValue<Nullable<int>>("onholdtime");
 			}
 		}
 		
@@ -2448,11 +2448,11 @@ namespace Dataverse_api.Entities
 		/// Number of open opportunities against an account and its child accounts.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("opendeals")]
-		public System.Nullable<int> OpenDeals
+		public Nullable<int> OpenDeals
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("opendeals");
+				return GetAttributeValue<Nullable<int>>("opendeals");
 			}
 		}
 		
@@ -2460,11 +2460,11 @@ namespace Dataverse_api.Entities
 		/// Last Updated time of rollup field Open Deals.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("opendeals_date")]
-		public System.Nullable<System.DateTime> OpenDeals_Date
+		public Nullable<DateTime> OpenDeals_Date
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.DateTime>>("opendeals_date");
+				return GetAttributeValue<Nullable<DateTime>>("opendeals_date");
 			}
 		}
 		
@@ -2472,11 +2472,11 @@ namespace Dataverse_api.Entities
 		/// State of rollup field Open Deals.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("opendeals_state")]
-		public System.Nullable<int> OpenDeals_State
+		public Nullable<int> OpenDeals_State
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("opendeals_state");
+				return GetAttributeValue<Nullable<int>>("opendeals_state");
 			}
 		}
 		
@@ -2488,7 +2488,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("openrevenue");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.Money>("openrevenue");
 			}
 		}
 		
@@ -2500,7 +2500,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("openrevenue_base");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.Money>("openrevenue_base");
 			}
 		}
 		
@@ -2508,11 +2508,11 @@ namespace Dataverse_api.Entities
 		/// Last Updated time of rollup field Open Revenue.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("openrevenue_date")]
-		public System.Nullable<System.DateTime> OpenRevenue_Date
+		public Nullable<DateTime> OpenRevenue_Date
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.DateTime>>("openrevenue_date");
+				return GetAttributeValue<Nullable<DateTime>>("openrevenue_date");
 			}
 		}
 		
@@ -2520,11 +2520,11 @@ namespace Dataverse_api.Entities
 		/// State of rollup field Open Revenue.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("openrevenue_state")]
-		public System.Nullable<int> OpenRevenue_State
+		public Nullable<int> OpenRevenue_State
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("openrevenue_state");
+				return GetAttributeValue<Nullable<int>>("openrevenue_state");
 			}
 		}
 		
@@ -2536,13 +2536,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("originatingleadid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("originatingleadid");
 			}
 			set
 			{
-				this.OnPropertyChanging("OriginatingLeadId");
-				this.SetAttributeValue("originatingleadid", value);
-				this.OnPropertyChanged("OriginatingLeadId");
+				OnPropertyChanging("OriginatingLeadId");
+				SetAttributeValue("originatingleadid", value);
+				OnPropertyChanged("OriginatingLeadId");
 			}
 		}
 		
@@ -2550,17 +2550,17 @@ namespace Dataverse_api.Entities
 		/// Date and time that the record was migrated.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("overriddencreatedon")]
-		public System.Nullable<System.DateTime> OverriddenCreatedOn
+		public Nullable<DateTime> OverriddenCreatedOn
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.DateTime>>("overriddencreatedon");
+				return GetAttributeValue<Nullable<DateTime>>("overriddencreatedon");
 			}
 			set
 			{
-				this.OnPropertyChanging("OverriddenCreatedOn");
-				this.SetAttributeValue("overriddencreatedon", value);
-				this.OnPropertyChanged("OverriddenCreatedOn");
+				OnPropertyChanging("OverriddenCreatedOn");
+				SetAttributeValue("overriddencreatedon", value);
+				OnPropertyChanged("OverriddenCreatedOn");
 			}
 		}
 		
@@ -2572,13 +2572,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ownerid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ownerid");
 			}
 			set
 			{
-				this.OnPropertyChanging("OwnerId");
-				this.SetAttributeValue("ownerid", value);
-				this.OnPropertyChanged("OwnerId");
+				OnPropertyChanging("OwnerId");
+				SetAttributeValue("ownerid", value);
+				OnPropertyChanged("OwnerId");
 			}
 		}
 		
@@ -2594,9 +2594,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("OwnershipCode");
-				this.SetAttributeValue("ownershipcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("OwnershipCode");
+				OnPropertyChanging("OwnershipCode");
+				SetAttributeValue("ownershipcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("OwnershipCode");
 			}
 		}
 		
@@ -2608,7 +2608,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningbusinessunit");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningbusinessunit");
 			}
 		}
 		
@@ -2620,7 +2620,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningteam");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningteam");
 			}
 		}
 		
@@ -2632,7 +2632,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owninguser");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owninguser");
 			}
 		}
 		
@@ -2644,13 +2644,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("parentaccountid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("parentaccountid");
 			}
 			set
 			{
-				this.OnPropertyChanging("ParentAccountId");
-				this.SetAttributeValue("parentaccountid", value);
-				this.OnPropertyChanged("ParentAccountId");
+				OnPropertyChanging("ParentAccountId");
+				SetAttributeValue("parentaccountid", value);
+				OnPropertyChanged("ParentAccountId");
 			}
 		}
 		
@@ -2658,17 +2658,17 @@ namespace Dataverse_api.Entities
 		/// For system use only. Legacy Microsoft Dynamics CRM 3.0 workflow data.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("participatesinworkflow")]
-		public System.Nullable<bool> ParticipatesInWorkflow
+		public Nullable<bool> ParticipatesInWorkflow
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("participatesinworkflow");
+				return GetAttributeValue<Nullable<bool>>("participatesinworkflow");
 			}
 			set
 			{
-				this.OnPropertyChanging("ParticipatesInWorkflow");
-				this.SetAttributeValue("participatesinworkflow", value);
-				this.OnPropertyChanged("ParticipatesInWorkflow");
+				OnPropertyChanging("ParticipatesInWorkflow");
+				SetAttributeValue("participatesinworkflow", value);
+				OnPropertyChanged("ParticipatesInWorkflow");
 			}
 		}
 		
@@ -2684,9 +2684,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("PaymentTermsCode");
-				this.SetAttributeValue("paymenttermscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("PaymentTermsCode");
+				OnPropertyChanging("PaymentTermsCode");
+				SetAttributeValue("paymenttermscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("PaymentTermsCode");
 			}
 		}
 		
@@ -2702,9 +2702,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("PreferredAppointmentDayCode");
-				this.SetAttributeValue("preferredappointmentdaycode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("PreferredAppointmentDayCode");
+				OnPropertyChanging("PreferredAppointmentDayCode");
+				SetAttributeValue("preferredappointmentdaycode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("PreferredAppointmentDayCode");
 			}
 		}
 		
@@ -2720,9 +2720,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("PreferredAppointmentTimeCode");
-				this.SetAttributeValue("preferredappointmenttimecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("PreferredAppointmentTimeCode");
+				OnPropertyChanging("PreferredAppointmentTimeCode");
+				SetAttributeValue("preferredappointmenttimecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("PreferredAppointmentTimeCode");
 			}
 		}
 		
@@ -2738,9 +2738,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("PreferredContactMethodCode");
-				this.SetAttributeValue("preferredcontactmethodcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("PreferredContactMethodCode");
+				OnPropertyChanging("PreferredContactMethodCode");
+				SetAttributeValue("preferredcontactmethodcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("PreferredContactMethodCode");
 			}
 		}
 		
@@ -2752,13 +2752,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("preferredequipmentid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("preferredequipmentid");
 			}
 			set
 			{
-				this.OnPropertyChanging("PreferredEquipmentId");
-				this.SetAttributeValue("preferredequipmentid", value);
-				this.OnPropertyChanged("PreferredEquipmentId");
+				OnPropertyChanging("PreferredEquipmentId");
+				SetAttributeValue("preferredequipmentid", value);
+				OnPropertyChanged("PreferredEquipmentId");
 			}
 		}
 		
@@ -2770,13 +2770,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("preferredserviceid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("preferredserviceid");
 			}
 			set
 			{
-				this.OnPropertyChanging("PreferredServiceId");
-				this.SetAttributeValue("preferredserviceid", value);
-				this.OnPropertyChanged("PreferredServiceId");
+				OnPropertyChanging("PreferredServiceId");
+				SetAttributeValue("preferredserviceid", value);
+				OnPropertyChanged("PreferredServiceId");
 			}
 		}
 		
@@ -2788,13 +2788,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("preferredsystemuserid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("preferredsystemuserid");
 			}
 			set
 			{
-				this.OnPropertyChanging("PreferredSystemUserId");
-				this.SetAttributeValue("preferredsystemuserid", value);
-				this.OnPropertyChanged("PreferredSystemUserId");
+				OnPropertyChanging("PreferredSystemUserId");
+				SetAttributeValue("preferredsystemuserid", value);
+				OnPropertyChanged("PreferredSystemUserId");
 			}
 		}
 		
@@ -2806,13 +2806,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("primarycontactid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("primarycontactid");
 			}
 			set
 			{
-				this.OnPropertyChanging("PrimaryContactId");
-				this.SetAttributeValue("primarycontactid", value);
-				this.OnPropertyChanged("PrimaryContactId");
+				OnPropertyChanging("PrimaryContactId");
+				SetAttributeValue("primarycontactid", value);
+				OnPropertyChanged("PrimaryContactId");
 			}
 		}
 		
@@ -2824,13 +2824,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("primarysatoriid");
+				return GetAttributeValue<string>("primarysatoriid");
 			}
 			set
 			{
-				this.OnPropertyChanging("PrimarySatoriId");
-				this.SetAttributeValue("primarysatoriid", value);
-				this.OnPropertyChanged("PrimarySatoriId");
+				OnPropertyChanging("PrimarySatoriId");
+				SetAttributeValue("primarysatoriid", value);
+				OnPropertyChanged("PrimarySatoriId");
 			}
 		}
 		
@@ -2842,13 +2842,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("primarytwitterid");
+				return GetAttributeValue<string>("primarytwitterid");
 			}
 			set
 			{
-				this.OnPropertyChanging("PrimaryTwitterId");
-				this.SetAttributeValue("primarytwitterid", value);
-				this.OnPropertyChanged("PrimaryTwitterId");
+				OnPropertyChanging("PrimaryTwitterId");
+				SetAttributeValue("primarytwitterid", value);
+				OnPropertyChanged("PrimaryTwitterId");
 			}
 		}
 		
@@ -2856,17 +2856,17 @@ namespace Dataverse_api.Entities
 		/// Shows the ID of the process.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("processid")]
-		public System.Nullable<System.Guid> ProcessId
+		public Nullable<Guid> ProcessId
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("processid");
+				return GetAttributeValue<Nullable<Guid>>("processid");
 			}
 			set
 			{
-				this.OnPropertyChanging("ProcessId");
-				this.SetAttributeValue("processid", value);
-				this.OnPropertyChanged("ProcessId");
+				OnPropertyChanging("ProcessId");
+				SetAttributeValue("processid", value);
+				OnPropertyChanged("ProcessId");
 			}
 		}
 		
@@ -2878,13 +2878,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("revenue");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.Money>("revenue");
 			}
 			set
 			{
-				this.OnPropertyChanging("Revenue");
-				this.SetAttributeValue("revenue", value);
-				this.OnPropertyChanged("Revenue");
+				OnPropertyChanging("Revenue");
+				SetAttributeValue("revenue", value);
+				OnPropertyChanged("Revenue");
 			}
 		}
 		
@@ -2896,7 +2896,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("revenue_base");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.Money>("revenue_base");
 			}
 		}
 		
@@ -2904,17 +2904,17 @@ namespace Dataverse_api.Entities
 		/// Type the number of shares available to the public for the account. This number is used as an indicator in financial performance analysis.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sharesoutstanding")]
-		public System.Nullable<int> SharesOutstanding
+		public Nullable<int> SharesOutstanding
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("sharesoutstanding");
+				return GetAttributeValue<Nullable<int>>("sharesoutstanding");
 			}
 			set
 			{
-				this.OnPropertyChanging("SharesOutstanding");
-				this.SetAttributeValue("sharesoutstanding", value);
-				this.OnPropertyChanged("SharesOutstanding");
+				OnPropertyChanging("SharesOutstanding");
+				SetAttributeValue("sharesoutstanding", value);
+				OnPropertyChanged("SharesOutstanding");
 			}
 		}
 		
@@ -2930,9 +2930,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("ShippingMethodCode");
-				this.SetAttributeValue("shippingmethodcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("ShippingMethodCode");
+				OnPropertyChanging("ShippingMethodCode");
+				SetAttributeValue("shippingmethodcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("ShippingMethodCode");
 			}
 		}
 		
@@ -2944,13 +2944,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("sic");
+				return GetAttributeValue<string>("sic");
 			}
 			set
 			{
-				this.OnPropertyChanging("SIC");
-				this.SetAttributeValue("sic", value);
-				this.OnPropertyChanged("SIC");
+				OnPropertyChanging("SIC");
+				SetAttributeValue("sic", value);
+				OnPropertyChanged("SIC");
 			}
 		}
 		
@@ -2962,13 +2962,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("slaid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("slaid");
 			}
 			set
 			{
-				this.OnPropertyChanging("SLAId");
-				this.SetAttributeValue("slaid", value);
-				this.OnPropertyChanged("SLAId");
+				OnPropertyChanging("SLAId");
+				SetAttributeValue("slaid", value);
+				OnPropertyChanged("SLAId");
 			}
 		}
 		
@@ -2980,7 +2980,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("slainvokedid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("slainvokedid");
 			}
 		}
 		
@@ -2988,17 +2988,17 @@ namespace Dataverse_api.Entities
 		/// Shows the ID of the stage.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("stageid")]
-		public System.Nullable<System.Guid> StageId
+		public Nullable<Guid> StageId
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("stageid");
+				return GetAttributeValue<Nullable<Guid>>("stageid");
 			}
 			set
 			{
-				this.OnPropertyChanging("StageId");
-				this.SetAttributeValue("stageid", value);
-				this.OnPropertyChanged("StageId");
+				OnPropertyChanging("StageId");
+				SetAttributeValue("stageid", value);
+				OnPropertyChanged("StageId");
 			}
 		}
 		
@@ -3014,9 +3014,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("StateCode");
-				this.SetAttributeValue("statecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("StateCode");
+				OnPropertyChanging("StateCode");
+				SetAttributeValue("statecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("StateCode");
 			}
 		}
 		
@@ -3032,9 +3032,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("StatusCode");
-				this.SetAttributeValue("statuscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("StatusCode");
+				OnPropertyChanging("StatusCode");
+				SetAttributeValue("statuscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("StatusCode");
 			}
 		}
 		
@@ -3046,13 +3046,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("stockexchange");
+				return GetAttributeValue<string>("stockexchange");
 			}
 			set
 			{
-				this.OnPropertyChanging("StockExchange");
-				this.SetAttributeValue("stockexchange", value);
-				this.OnPropertyChanged("StockExchange");
+				OnPropertyChanging("StockExchange");
+				SetAttributeValue("stockexchange", value);
+				OnPropertyChanged("StockExchange");
 			}
 		}
 		
@@ -3060,17 +3060,17 @@ namespace Dataverse_api.Entities
 		/// Number of users or conversations followed the record
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("teamsfollowed")]
-		public System.Nullable<int> TeamsFollowed
+		public Nullable<int> TeamsFollowed
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("teamsfollowed");
+				return GetAttributeValue<Nullable<int>>("teamsfollowed");
 			}
 			set
 			{
-				this.OnPropertyChanging("TeamsFollowed");
-				this.SetAttributeValue("teamsfollowed", value);
-				this.OnPropertyChanged("TeamsFollowed");
+				OnPropertyChanging("TeamsFollowed");
+				SetAttributeValue("teamsfollowed", value);
+				OnPropertyChanged("TeamsFollowed");
 			}
 		}
 		
@@ -3082,13 +3082,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("telephone1");
+				return GetAttributeValue<string>("telephone1");
 			}
 			set
 			{
-				this.OnPropertyChanging("Telephone1");
-				this.SetAttributeValue("telephone1", value);
-				this.OnPropertyChanged("Telephone1");
+				OnPropertyChanging("Telephone1");
+				SetAttributeValue("telephone1", value);
+				OnPropertyChanged("Telephone1");
 			}
 		}
 		
@@ -3100,13 +3100,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("telephone2");
+				return GetAttributeValue<string>("telephone2");
 			}
 			set
 			{
-				this.OnPropertyChanging("Telephone2");
-				this.SetAttributeValue("telephone2", value);
-				this.OnPropertyChanged("Telephone2");
+				OnPropertyChanging("Telephone2");
+				SetAttributeValue("telephone2", value);
+				OnPropertyChanged("Telephone2");
 			}
 		}
 		
@@ -3118,13 +3118,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("telephone3");
+				return GetAttributeValue<string>("telephone3");
 			}
 			set
 			{
-				this.OnPropertyChanging("Telephone3");
-				this.SetAttributeValue("telephone3", value);
-				this.OnPropertyChanged("Telephone3");
+				OnPropertyChanging("Telephone3");
+				SetAttributeValue("telephone3", value);
+				OnPropertyChanged("Telephone3");
 			}
 		}
 		
@@ -3140,9 +3140,9 @@ namespace Dataverse_api.Entities
 			}
 			set
 			{
-				this.OnPropertyChanging("TerritoryCode");
-				this.SetAttributeValue("territorycode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("TerritoryCode");
+				OnPropertyChanging("TerritoryCode");
+				SetAttributeValue("territorycode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				OnPropertyChanged("TerritoryCode");
 			}
 		}
 		
@@ -3154,13 +3154,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("territoryid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("territoryid");
 			}
 			set
 			{
-				this.OnPropertyChanging("TerritoryId");
-				this.SetAttributeValue("territoryid", value);
-				this.OnPropertyChanged("TerritoryId");
+				OnPropertyChanging("TerritoryId");
+				SetAttributeValue("territoryid", value);
+				OnPropertyChanged("TerritoryId");
 			}
 		}
 		
@@ -3172,13 +3172,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("tickersymbol");
+				return GetAttributeValue<string>("tickersymbol");
 			}
 			set
 			{
-				this.OnPropertyChanging("TickerSymbol");
-				this.SetAttributeValue("tickersymbol", value);
-				this.OnPropertyChanged("TickerSymbol");
+				OnPropertyChanging("TickerSymbol");
+				SetAttributeValue("tickersymbol", value);
+				OnPropertyChanged("TickerSymbol");
 			}
 		}
 		
@@ -3190,7 +3190,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("timespentbymeonemailandmeetings");
+				return GetAttributeValue<string>("timespentbymeonemailandmeetings");
 			}
 		}
 		
@@ -3198,17 +3198,17 @@ namespace Dataverse_api.Entities
 		/// For internal use only.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezoneruleversionnumber")]
-		public System.Nullable<int> TimeZoneRuleVersionNumber
+		public Nullable<int> TimeZoneRuleVersionNumber
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("timezoneruleversionnumber");
+				return GetAttributeValue<Nullable<int>>("timezoneruleversionnumber");
 			}
 			set
 			{
-				this.OnPropertyChanging("TimeZoneRuleVersionNumber");
-				this.SetAttributeValue("timezoneruleversionnumber", value);
-				this.OnPropertyChanged("TimeZoneRuleVersionNumber");
+				OnPropertyChanging("TimeZoneRuleVersionNumber");
+				SetAttributeValue("timezoneruleversionnumber", value);
+				OnPropertyChanged("TimeZoneRuleVersionNumber");
 			}
 		}
 		
@@ -3220,13 +3220,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("transactioncurrencyid");
+				return GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("transactioncurrencyid");
 			}
 			set
 			{
-				this.OnPropertyChanging("TransactionCurrencyId");
-				this.SetAttributeValue("transactioncurrencyid", value);
-				this.OnPropertyChanged("TransactionCurrencyId");
+				OnPropertyChanging("TransactionCurrencyId");
+				SetAttributeValue("transactioncurrencyid", value);
+				OnPropertyChanged("TransactionCurrencyId");
 			}
 		}
 		
@@ -3238,13 +3238,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("traversedpath");
+				return GetAttributeValue<string>("traversedpath");
 			}
 			set
 			{
-				this.OnPropertyChanging("TraversedPath");
-				this.SetAttributeValue("traversedpath", value);
-				this.OnPropertyChanged("TraversedPath");
+				OnPropertyChanging("TraversedPath");
+				SetAttributeValue("traversedpath", value);
+				OnPropertyChanged("TraversedPath");
 			}
 		}
 		
@@ -3252,17 +3252,17 @@ namespace Dataverse_api.Entities
 		/// Time zone code that was in use when the record was created.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("utcconversiontimezonecode")]
-		public System.Nullable<int> UTCConversionTimeZoneCode
+		public Nullable<int> UTCConversionTimeZoneCode
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("utcconversiontimezonecode");
+				return GetAttributeValue<Nullable<int>>("utcconversiontimezonecode");
 			}
 			set
 			{
-				this.OnPropertyChanging("UTCConversionTimeZoneCode");
-				this.SetAttributeValue("utcconversiontimezonecode", value);
-				this.OnPropertyChanged("UTCConversionTimeZoneCode");
+				OnPropertyChanging("UTCConversionTimeZoneCode");
+				SetAttributeValue("utcconversiontimezonecode", value);
+				OnPropertyChanged("UTCConversionTimeZoneCode");
 			}
 		}
 		
@@ -3270,11 +3270,11 @@ namespace Dataverse_api.Entities
 		/// Version number of the account.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("versionnumber")]
-		public System.Nullable<long> VersionNumber
+		public Nullable<long> VersionNumber
 		{
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<long>>("versionnumber");
+				return GetAttributeValue<Nullable<long>>("versionnumber");
 			}
 		}
 		
@@ -3286,13 +3286,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("websiteurl");
+				return GetAttributeValue<string>("websiteurl");
 			}
 			set
 			{
-				this.OnPropertyChanging("WebSiteURL");
-				this.SetAttributeValue("websiteurl", value);
-				this.OnPropertyChanged("WebSiteURL");
+				OnPropertyChanging("WebSiteURL");
+				SetAttributeValue("websiteurl", value);
+				OnPropertyChanged("WebSiteURL");
 			}
 		}
 		
@@ -3304,13 +3304,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetAttributeValue<string>("yominame");
+				return GetAttributeValue<string>("yominame");
 			}
 			set
 			{
-				this.OnPropertyChanging("YomiName");
-				this.SetAttributeValue("yominame", value);
-				this.OnPropertyChanged("YomiName");
+				OnPropertyChanging("YomiName");
+				SetAttributeValue("yominame", value);
+				OnPropertyChanged("YomiName");
 			}
 		}
 		
@@ -3318,17 +3318,17 @@ namespace Dataverse_api.Entities
 		/// 1:N account_master_account
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("account_master_account", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
-		public System.Collections.Generic.IEnumerable<Account> Referencedaccount_master_account
+		public IEnumerable<Account> Referencedaccount_master_account
 		{
 			get
 			{
-				return this.GetRelatedEntities<Account>("account_master_account", Microsoft.Xrm.Sdk.EntityRole.Referenced);
+				return GetRelatedEntities<Account>("account_master_account", Microsoft.Xrm.Sdk.EntityRole.Referenced);
 			}
 			set
 			{
-				this.OnPropertyChanging("Referencedaccount_master_account");
-				this.SetRelatedEntities<Account>("account_master_account", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
-				this.OnPropertyChanged("Referencedaccount_master_account");
+				OnPropertyChanging("Referencedaccount_master_account");
+				SetRelatedEntities<Account>("account_master_account", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
+				OnPropertyChanged("Referencedaccount_master_account");
 			}
 		}
 		
@@ -3336,17 +3336,17 @@ namespace Dataverse_api.Entities
 		/// 1:N account_parent_account
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("account_parent_account", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
-		public System.Collections.Generic.IEnumerable<Account> Referencedaccount_parent_account
+		public IEnumerable<Account> Referencedaccount_parent_account
 		{
 			get
 			{
-				return this.GetRelatedEntities<Account>("account_parent_account", Microsoft.Xrm.Sdk.EntityRole.Referenced);
+				return GetRelatedEntities<Account>("account_parent_account", Microsoft.Xrm.Sdk.EntityRole.Referenced);
 			}
 			set
 			{
-				this.OnPropertyChanging("Referencedaccount_parent_account");
-				this.SetRelatedEntities<Account>("account_parent_account", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
-				this.OnPropertyChanged("Referencedaccount_parent_account");
+				OnPropertyChanging("Referencedaccount_parent_account");
+				SetRelatedEntities<Account>("account_parent_account", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
+				OnPropertyChanged("Referencedaccount_parent_account");
 			}
 		}
 		
@@ -3354,17 +3354,17 @@ namespace Dataverse_api.Entities
 		/// 1:N contact_customer_accounts
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_customer_accounts")]
-		public System.Collections.Generic.IEnumerable<Contact> contact_customer_accounts
+		public IEnumerable<Contact> contact_customer_accounts
 		{
 			get
 			{
-				return this.GetRelatedEntities<Contact>("contact_customer_accounts", null);
+				return GetRelatedEntities<Contact>("contact_customer_accounts", null);
 			}
 			set
 			{
-				this.OnPropertyChanging("contact_customer_accounts");
-				this.SetRelatedEntities<Contact>("contact_customer_accounts", null, value);
-				this.OnPropertyChanged("contact_customer_accounts");
+				OnPropertyChanging("contact_customer_accounts");
+				SetRelatedEntities<Contact>("contact_customer_accounts", null, value);
+				OnPropertyChanged("contact_customer_accounts");
 			}
 		}
 		
@@ -3372,17 +3372,17 @@ namespace Dataverse_api.Entities
 		/// 1:N incident_customer_accounts
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incident_customer_accounts")]
-		public System.Collections.Generic.IEnumerable<Incident> incident_customer_accounts
+		public IEnumerable<Incident> incident_customer_accounts
 		{
 			get
 			{
-				return this.GetRelatedEntities<Incident>("incident_customer_accounts", null);
+				return GetRelatedEntities<Incident>("incident_customer_accounts", null);
 			}
 			set
 			{
-				this.OnPropertyChanging("incident_customer_accounts");
-				this.SetRelatedEntities<Incident>("incident_customer_accounts", null, value);
-				this.OnPropertyChanged("incident_customer_accounts");
+				OnPropertyChanging("incident_customer_accounts");
+				SetRelatedEntities<Incident>("incident_customer_accounts", null, value);
+				OnPropertyChanged("incident_customer_accounts");
 			}
 		}
 		
@@ -3390,17 +3390,17 @@ namespace Dataverse_api.Entities
 		/// 1:N msa_account_managingpartner
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msa_account_managingpartner", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
-		public System.Collections.Generic.IEnumerable<Account> Referencedmsa_account_managingpartner
+		public IEnumerable<Account> Referencedmsa_account_managingpartner
 		{
 			get
 			{
-				return this.GetRelatedEntities<Account>("msa_account_managingpartner", Microsoft.Xrm.Sdk.EntityRole.Referenced);
+				return GetRelatedEntities<Account>("msa_account_managingpartner", Microsoft.Xrm.Sdk.EntityRole.Referenced);
 			}
 			set
 			{
-				this.OnPropertyChanging("Referencedmsa_account_managingpartner");
-				this.SetRelatedEntities<Account>("msa_account_managingpartner", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
-				this.OnPropertyChanged("Referencedmsa_account_managingpartner");
+				OnPropertyChanging("Referencedmsa_account_managingpartner");
+				SetRelatedEntities<Account>("msa_account_managingpartner", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
+				OnPropertyChanged("Referencedmsa_account_managingpartner");
 			}
 		}
 		
@@ -3408,17 +3408,17 @@ namespace Dataverse_api.Entities
 		/// 1:N msa_contact_managingpartner
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msa_contact_managingpartner")]
-		public System.Collections.Generic.IEnumerable<Contact> msa_contact_managingpartner
+		public IEnumerable<Contact> msa_contact_managingpartner
 		{
 			get
 			{
-				return this.GetRelatedEntities<Contact>("msa_contact_managingpartner", null);
+				return GetRelatedEntities<Contact>("msa_contact_managingpartner", null);
 			}
 			set
 			{
-				this.OnPropertyChanging("msa_contact_managingpartner");
-				this.SetRelatedEntities<Contact>("msa_contact_managingpartner", null, value);
-				this.OnPropertyChanged("msa_contact_managingpartner");
+				OnPropertyChanging("msa_contact_managingpartner");
+				SetRelatedEntities<Contact>("msa_contact_managingpartner", null, value);
+				OnPropertyChanged("msa_contact_managingpartner");
 			}
 		}
 		
@@ -3431,7 +3431,7 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetRelatedEntity<Account>("account_master_account", Microsoft.Xrm.Sdk.EntityRole.Referencing);
+				return GetRelatedEntity<Account>("account_master_account", Microsoft.Xrm.Sdk.EntityRole.Referencing);
 			}
 		}
 		
@@ -3444,13 +3444,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetRelatedEntity<Account>("account_parent_account", Microsoft.Xrm.Sdk.EntityRole.Referencing);
+				return GetRelatedEntity<Account>("account_parent_account", Microsoft.Xrm.Sdk.EntityRole.Referencing);
 			}
 			set
 			{
-				this.OnPropertyChanging("Referencingaccount_parent_account");
-				this.SetRelatedEntity<Account>("account_parent_account", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
-				this.OnPropertyChanged("Referencingaccount_parent_account");
+				OnPropertyChanging("Referencingaccount_parent_account");
+				SetRelatedEntity<Account>("account_parent_account", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
+				OnPropertyChanged("Referencingaccount_parent_account");
 			}
 		}
 		
@@ -3463,13 +3463,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetRelatedEntity<Contact>("account_primary_contact", null);
+				return GetRelatedEntity<Contact>("account_primary_contact", null);
 			}
 			set
 			{
-				this.OnPropertyChanging("account_primary_contact");
-				this.SetRelatedEntity<Contact>("account_primary_contact", null, value);
-				this.OnPropertyChanged("account_primary_contact");
+				OnPropertyChanging("account_primary_contact");
+				SetRelatedEntity<Contact>("account_primary_contact", null, value);
+				OnPropertyChanged("account_primary_contact");
 			}
 		}
 		
@@ -3482,13 +3482,13 @@ namespace Dataverse_api.Entities
 		{
 			get
 			{
-				return this.GetRelatedEntity<Account>("msa_account_managingpartner", Microsoft.Xrm.Sdk.EntityRole.Referencing);
+				return GetRelatedEntity<Account>("msa_account_managingpartner", Microsoft.Xrm.Sdk.EntityRole.Referencing);
 			}
 			set
 			{
-				this.OnPropertyChanging("Referencingmsa_account_managingpartner");
-				this.SetRelatedEntity<Account>("msa_account_managingpartner", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
-				this.OnPropertyChanged("Referencingmsa_account_managingpartner");
+				OnPropertyChanging("Referencingmsa_account_managingpartner");
+				SetRelatedEntity<Account>("msa_account_managingpartner", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
+				OnPropertyChanged("Referencingmsa_account_managingpartner");
 			}
 		}
 	}
