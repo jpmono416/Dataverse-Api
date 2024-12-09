@@ -1,4 +1,5 @@
 ﻿using Dataverse_api.Util;
+using Microsoft.Xrm.Sdk;
 
 namespace Dataverse_api.View;
 
@@ -8,24 +9,6 @@ namespace Dataverse_api.View;
 /// </summary>
 public static class InputManager
 {
-    // Create mappings for valid actions and entities
-    private static readonly Dictionary<string, string> ValidActions = new()
-    {
-        { "create", Constants.Actions.Create },
-        { "get", Constants.Actions.Get },
-        { "update", Constants.Actions.Update },
-        { "delete", Constants.Actions.Delete },
-        { "help", Constants.Actions.Help },
-        { "exit", Constants.Actions.Exit }
-    };
-
-    private static readonly Dictionary<string, string?> ValidEntities = new()
-    {
-        { "account", Constants.EntityNames.Account },
-        { "contact", Constants.EntityNames.Contact },
-        { "case", Constants.EntityNames.Case }
-    };
-    
     public static bool StartManualInput()
     {
         while (true)
@@ -69,7 +52,7 @@ public static class InputManager
                     return new Command
                     {
                         Action = parts[0], // TODO this logic might be improved
-                        Entity = null,
+                        EntityType = null,
                         Id = null
                     };
                 
@@ -80,29 +63,84 @@ public static class InputManager
             var actionInput = parts[0].ToLower();
             var entityInput = parts[1].ToLower();
             Guid? id = parts.Length == 3 && Guid.TryParse(parts[2], out var parsedId) ? parsedId : null;
-
-            // Map the action and entity inputs to constants
-            // TODO use the new property All of each class to validate the input
-            if (!ValidActions.TryGetValue(actionInput, out var action))
+            
+            // Map the action and entity inputs to constants, then return early if they are valid
+            if (Constants.Actions.All.Contains(actionInput) 
+                && Constants.EntityNames.EntityMapping.TryGetValue(entityInput, out var entityType))
             {
-                Logger.Log(Constants.Messages.InvalidAction);
-                continue;
-            }
-
-            // Return if both match
-            if (ValidEntities.TryGetValue(entityInput, out var entity))
                 return new Command
                 {
-                    Action = action,
-                    Entity = entity,
+                    Action = actionInput,
+                    EntityType = entityType,
                     Id = id
                 };
+            }
             
             Logger.Log(Constants.Messages.InvalidEntity);
-            continue;
-
         }
     }
+    
+    /*
+     * TODO this iterates over every single property from the schema, even if it's not required. It should iterate over
+     * the required properties only (there is a dictionary in the Constants for this)
+     */
+    public static T PromptEntityProperties<T>(T entity, bool isUpdate = false) where T : Entity
+    {
+        var properties = typeof(T).GetProperties();
+        var requiredAttributes = Constants.EntityNames.EntityAttributes[entity.GetType()];
 
+        foreach (var property in properties)
+        {
+            // Skip properties that aren't required
+            if (!requiredAttributes.Contains(property.Name)) continue;
+            
+            // Skip properties that aren't writable or are navigation properties
+            if (!property.CanWrite || property.PropertyType == typeof(EntityReference)) continue;
 
+            var currentValue = isUpdate ? property.GetValue(entity) : null;
+            Logger.Log($"{property.Name}: {(currentValue != null ? $"Current Value = {currentValue}" : "Required")}");
+            Logger.Log("Enter new value or press Enter to skip:");
+
+            // Handle relational properties
+            if (property.PropertyType == typeof(EntityReference))
+            {
+                Logger.Log($"Please provide the ID for {property.Name}:");
+                var relatedEntityIdInput = Console.ReadLine()?.Trim();
+                if (!Guid.TryParse(relatedEntityIdInput, out var relatedEntityId))
+                {
+                    Logger.Log($"Invalid ID for {property.Name}. Please try again.");
+                    return PromptEntityProperties(entity, isUpdate);
+                }
+                var entityReference = new EntityReference
+                {
+                    Id = relatedEntityId,
+                    LogicalName = property.Name.Replace("Id", "").ToLower() // Assumes naming convention
+                };
+                property.SetValue(entity, entityReference);
+            }
+            
+            var input = Console.ReadLine()?.Trim();
+            if (string.IsNullOrEmpty(input))
+            {
+                if (isUpdate) continue; // Skip updating this property if blank
+                if (currentValue == null) throw new InvalidOperationException($"Property {property.Name} is required.");
+            }
+            else
+            {
+                try
+                {
+                    // Convert input to the correct type and set the value
+                    var value = Convert.ChangeType(input, property.PropertyType);
+                    property.SetValue(entity, value);
+                }
+                catch
+                {
+                    Logger.Log($"Invalid value for {property.Name}. Please try again.");
+                    return PromptEntityProperties(entity, isUpdate); // Retry for the same entity
+                }
+            }
+        }
+
+        return entity;
+    }
 }

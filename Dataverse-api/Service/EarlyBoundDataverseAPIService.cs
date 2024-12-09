@@ -1,4 +1,5 @@
-﻿using Dataverse_api.Entities;
+﻿using System.Reflection;
+using Dataverse_api.Entities;
 using Dataverse_api.Util;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
@@ -38,6 +39,10 @@ public static class EarlyBoundDataverseApiService
     public static T GetEntityById<T>(Guid entityId) where T : Entity => 
         Service.Retrieve(typeof(T).Name.ToLower(), entityId, new ColumnSet(true)).ToEntity<T>();
 
+    public static List<T> GetAllEntities<T>() where T : Entity =>
+        Service.RetrieveMultiple(new QueryExpression(typeof(T).Name.ToLower()){ ColumnSet = new ColumnSet(true) })
+            .Entities.Select(e => e.ToEntity<T>()).ToList();
+
     /// <summary>
     /// Updates an existing entity in Dataverse using a custom update action.
     /// </summary>
@@ -46,7 +51,7 @@ public static class EarlyBoundDataverseApiService
     /// <param name="updateAction">The action to perform updates on the entity.</param>
     public static void UpdateEntity<T>(T entity, Action<T> updateAction) where T : Entity
     {
-        updateAction(entity); // Apply specific updates via the delegate
+        updateAction(entity);
         Service.Update(entity);
     }
 

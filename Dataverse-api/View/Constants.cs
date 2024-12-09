@@ -49,17 +49,7 @@ public static class Constants
         public const string Cleanup = "cleanup";
         public const string Exit = "exit";
         
-        public static readonly List<string> All =
-        [
-            Help,
-            Create,
-            Get,
-            Update,
-            List,
-            Delete,
-            Cleanup,
-            Exit
-        ];
+        public static readonly List<string> All = [ Help, Create, Get, Update, List, Delete, Cleanup, Exit ];
     }
 
     /// <summary>
@@ -68,16 +58,23 @@ public static class Constants
     /// </summary>
     public static class EntityNames
     {
-        public const string Account = "account";
-        public const string Contact = "contact";
-        public const string Case = "case";
+        private const string Account = "account";
+        private const string Contact = "contact";
+        private const string Case = "case";
         
-        public static readonly List<string> All =
-        [
-            Account,
-            Contact,
-            Case
-        ];
+        public static readonly Dictionary<string, Type> EntityMapping = new()
+        {
+            { Account, typeof(Account) },
+            { Contact, typeof(Contact) },
+            { Case, typeof(Incident) }
+        };
+        
+        public static readonly Dictionary<Type, List<string>> EntityAttributes = new()
+        {
+            { typeof(Incident), ["title", "ticketnumber", "prioritycode", "caseorigincode", "customerid", "statuscode", "createdon"] },
+            { typeof(Account), ["name", "telephone1", "address1_city", "primarycontactid"] },
+            { typeof(Contact), ["fullname", "emailaddress1", "parentcustomerid ", "telephone1"] }
+        };
     }
 
     /// <summary>
@@ -103,8 +100,10 @@ public static class Constants
                                                   - Case
                                           * Note: 'get', 'update' and 'delete' commands require an entity GUID as well. For example: 'get case <guid>'
                                           """;
+
         public static readonly string InvalidAction = $"Invalid action. Supported actions: {string.Join(", ", Actions.All)}.";
-        public static readonly string InvalidEntity = $"Invalid entity. Supported entities: {string.Join(", ", EntityNames.All)}";
+        public static readonly string InvalidEntity = $"Invalid entity. Supported entities: {string.Join(", ", EntityNames.EntityMapping.Keys)}";
+        public const string InvalidCommand = "Invalid command. Please enter a valid command in the form of: action entity <optional_guid>. Use help for more information.";
         public const string CommandRequiresId = "This command requires an entity ID. Please use `command entity <guid>`.";
         public const string WelcomeMessage = "Welcome to the Customer Service Hub Management Console!";
         public const string CleanupMessage = "Cleaning up created entities...";

@@ -138,4 +138,13 @@ public static class Utils
         }
         return service;
     }
+    
+    public static string[] GetConstants(Type type)
+    {
+        return type
+            .GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.FlattenHierarchy)
+            .Where(f => f.IsLiteral && !f.IsInitOnly && f.FieldType == typeof(string))
+            .Select(f => f.GetValue(null)?.ToString())
+            .ToArray();
+    }
 }

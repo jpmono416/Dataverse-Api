@@ -9,12 +9,6 @@ namespace Dataverse_api.View;
 /// </summary>
 public static class Logger
 {
-    private static readonly Dictionary<Type, List<string>> EntityAttributes = new()
-    {
-        { typeof(Incident), ["CaseTitle", "CaseNumber", "Priority", "Origin", "Customer", "StatusReason", "CreatedOn"] },
-        { typeof(Account), ["AccountName", "MainPhone", "Address1_City", "PrimaryContact"] },
-        { typeof(Contact), ["FullName", "Email", "CompanyName", "BusinessPhone"] }
-    };
     
     public static void Log(string message)
     {
@@ -37,6 +31,7 @@ public static class Logger
     
     /// <summary>
     /// Logs an entity's relevant attributes to the console.
+    /// TODO: This code is currently not working as expected. It appears the property names might be incorrect.
     /// </summary>
     /// <param name="entity">The Dataverse Entity object to print</param>
     /// <typeparam name="T">
@@ -59,7 +54,7 @@ public static class Logger
 
         var entityType = entity.GetType();
 
-        if (!EntityAttributes.TryGetValue(entityType, out var relevantAttributes))
+        if (!Constants.EntityNames.EntityAttributes.TryGetValue(entityType, out var relevantAttributes))
         {
             Console.WriteLine($"No logging configuration found for entity type: {entityType.Name}");
             return;
