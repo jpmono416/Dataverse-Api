@@ -90,7 +90,7 @@ public static class App
 
             case Constants.Actions.Delete:
                 if (command.Id.HasValue) DeleteEntity(command); 
-                else Logger.Log("Delete command requires an entity ID.");
+                else Logger.Log(Constants.Messages.CommandRequiresId);
                 
                 break;
 

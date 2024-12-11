@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using Dataverse_api.Entities;
 using Dataverse_api.Util;
+using Dataverse_api.View;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 
@@ -14,13 +15,8 @@ namespace Dataverse_api.Service;
 /// </summary>
 public static class EarlyBoundDataverseApiService
 {
-    private static readonly IOrganizationService Service = Utils.GetOrganizationService($"""
-         AuthType=ClientSecret;
-         SkipDiscovery=true;url={Utils.GetFromEnv("SCOPE")};
-         Secret={Utils.GetFromEnv("SECRET_ID")};
-         ClientId={Utils.GetFromEnv("APP_ID")};
-         RequireNewInstance=true
-         """);
+    // This can be changed to use an OAuth connection string from the Constants class
+    private static readonly IOrganizationService Service = Utils.GetOrganizationService(Constants.ClientSecretConnectionString);
     
     /// <summary>
     /// Creates a new entity of the specified type in Dataverse.

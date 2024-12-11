@@ -1,4 +1,5 @@
 ﻿using Dataverse_api.Entities;
+using Dataverse_api.Util;
 
 namespace Dataverse_api.View;
 
@@ -7,6 +8,25 @@ namespace Dataverse_api.View;
 /// </summary>
 public static class Constants
 {
+    public static readonly string ClientSecretConnectionString = $"""
+                                                                  AuthType=ClientSecret;
+                                                                  SkipDiscovery=true;url={Utils.GetFromEnv("SCOPE")};
+                                                                  Secret={Utils.GetFromEnv("SECRET_ID")};
+                                                                  ClientId={Utils.GetFromEnv("APP_ID")};
+                                                                  RequireNewInstance=true
+                                                                  """;
+    
+    // TODO Redirect URI might be wrong here, it should be the same as the one in the Azure App Registration
+    public static readonly string OAuthConnectionString = $"""
+                                                            AuthType=OAuth;
+                                                            SkipDiscovery=true;url={Utils.GetFromEnv("SCOPE")};
+                                                            AppId={Utils.GetFromEnv("APP_ID")};
+                                                            RedirectUri=${Utils.GetFromEnv("API_URL")};
+                                                            TokenCacheStorePath=./;
+                                                            LoginPrompt=Auto
+                                                            """;
+    
+    
     /// <summary>
     /// Contains the demo data for the application. It contains static readonly and not constant fields because 
     /// the IDs are assigned as they are created in the Application, the rest remains constant.
