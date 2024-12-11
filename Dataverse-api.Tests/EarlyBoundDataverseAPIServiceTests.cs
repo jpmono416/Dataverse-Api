@@ -1,97 +1,145 @@
-﻿using System.ServiceModel;
+﻿using System;
+using System.Collections.Generic;
 using Dataverse_api.Entities;
 using Dataverse_api.Service;
 using Dataverse_api.Util;
 using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Query;
+using Moq;
 using Xunit;
 
-namespace Dataverse_api.Tests;
-
-[Collection("Service unit tests")]
-public class EarlyBoundDataverseAPIServiceTests
+namespace Dataverse_api.Tests
 {
-    private List<Guid> _createdAccounts = [];
-    private List<Guid> _createdContacts = [];
-    private List<Guid> _createdCases = [];
-    
-    // Constructor
-    public EarlyBoundDataverseAPIServiceTests()
+    public class EarlyBoundDataverseApiServiceTests
     {
-        // Setup
-        Utils.LoadEnvVariables();
-    }
-    
-    // Destructor
-    ~EarlyBoundDataverseAPIServiceTests()
-    {
-        // Teardown
-        foreach (var accountId in _createdAccounts) EarlyBoundDataverseApiService.DeleteEntity<Account>(accountId);
-        foreach (var contactId in _createdContacts) EarlyBoundDataverseApiService.DeleteEntity<Contact>(contactId);
-        foreach (var caseId in _createdCases) EarlyBoundDataverseApiService.DeleteEntity<Incident>(caseId);
-    }
-    
-    [Fact]
-    public void CreateEntityShouldReturnEntityGuid()
-    {
-        // Arrange
-        Account account = new()
+        private readonly Mock<IOrganizationService> _mockService;
+        private static void updateAccountAction(Account account) => account.Telephone1 = "098-765-4321";
+        private readonly List<Guid> _createdAccounts = [];
+
+        public EarlyBoundDataverseApiServiceTests()
         {
-            Name = "Test Corp",
-            EMailAddress1 = "testcontact@acme.com",
-            Telephone1 = "123-456-7890"
-        };
-        
-        // Act
-        Guid id = EarlyBoundDataverseApiService.CreateEntity(account);
-        
-        // Assert
-        Assert.NotEqual(Guid.Empty, id);
-        
-        _createdAccounts.Add(id);
-    }
+            // Setup
+            Utils.LoadEnvVariables();
+            
+            _mockService = new Mock<IOrganizationService>();
+            EarlyBoundDataverseApiService.Initialize(_mockService.Object);
+        }
     
-    [Fact]
-    public void CreateEntityWithNullEntityShouldThrowException()
-    {
-        // Act & Assert
-        Assert.Throws<FaultException<OrganizationServiceFault>>(() => EarlyBoundDataverseApiService.CreateEntity<Account>(null));
-    }
-
-    [Fact]
-    public void CreateEntityWithMinimalFieldsShouldReturnEntityGuid()
-    {
-        // Arrange
-        Account account = new()
+        // Destructor
+        ~EarlyBoundDataverseApiServiceTests()
         {
-            Name = "Minimal Corp"
-        };
+            // Teardown
+            foreach (var accountId in _createdAccounts) EarlyBoundDataverseApiService.DeleteEntity<Account>(accountId);
+        }
 
-        // Act
-        Guid id = EarlyBoundDataverseApiService.CreateEntity(account);
-
-        // Assert
-        Assert.NotEqual(Guid.Empty, id);
-
-        _createdAccounts.Add(id);
-    }
-
-    [Fact]
-    public void CreateEntityWithSpecialCharactersInNameShouldReturnEntityGuid()
-    {
-        // Arrange
-        Account account = new()
+        [Fact]
+        public void CreateEntity_ShouldUseMockService()
         {
-            Name = "Test Corp!@#$%^&*()",
-            EMailAddress1 = "testcontact@acme.com",
-            Telephone1 = "123-456-7890"
-        };
+            // Arrange
+            var expectedId = Guid.NewGuid();
 
-        // Act
-        Guid id = EarlyBoundDataverseApiService.CreateEntity(account);
+            _mockService.Setup(s => s.Create(It.IsAny<Entity>())).Returns(expectedId);
 
-        // Assert
-        Assert.NotEqual(Guid.Empty, id);
+            var account = new Account { Name = "Test Account" };
 
-        _createdAccounts.Add(id);
+            // Act
+            var result = EarlyBoundDataverseApiService.CreateEntity(account);
+            _createdAccounts.Add(result);
+
+            // Assert
+            Assert.Equal(expectedId, result);
+            _mockService.Verify(s => s.Create(It.IsAny<Entity>()), Times.Once);
+        }
+        
+        [Fact]
+        public void CreateEntity_ShouldReturnNewGuid()
+        {
+            // Arrange
+            var account = new Account { Name = "Test Account" };
+            var expectedId = Guid.NewGuid();
+
+            _mockService.Setup(s => s.Create(It.IsAny<Entity>())).Returns(expectedId);
+
+            // Act
+            var result = EarlyBoundDataverseApiService.CreateEntity(account);
+            _createdAccounts.Add(result);
+            
+            // Assert
+            Assert.Equal(expectedId, result);
+            _mockService.Verify(s => s.Create(It.IsAny<Entity>()), Times.Once);
+        }
+
+        [Fact]
+        public void GetEntityById_ShouldReturnCorrectEntity()
+        {
+            // Arrange
+            var accountId = Guid.NewGuid();
+            var expectedAccount = new Account { Id = accountId, Name = "Test Account" };
+
+            _mockService.Setup(s => s.Retrieve("account", accountId, It.IsAny<ColumnSet>()))
+                .Returns(expectedAccount);
+
+            // Act
+            var result = EarlyBoundDataverseApiService.GetEntityById<Account>(accountId);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.Equal(expectedAccount.Id, result.Id);
+            Assert.Equal(expectedAccount.Name, result.Name);
+            _mockService.Verify(s => s.Retrieve("account", accountId, It.IsAny<ColumnSet>()), Times.Once);
+        }
+
+        [Fact]
+        public void GetAllEntities_ShouldReturnEntityList()
+        {
+            // Arrange
+            var accounts = new List<Entity>
+            {
+                new Account { Id = Guid.NewGuid(), Name = "Account 1" },
+                new Account { Id = Guid.NewGuid(), Name = "Account 2" }
+            };
+
+            var entityCollection = new EntityCollection(accounts);
+
+            _mockService.Setup(s => s.RetrieveMultiple(It.IsAny<QueryExpression>())).Returns(entityCollection);
+
+            // Act
+            var result = EarlyBoundDataverseApiService.GetAllEntities<Account>();
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.Equal(2, result.Count);
+            Assert.Collection(result,
+                account => Assert.Equal("Account 1", account.Name),
+                account => Assert.Equal("Account 2", account.Name));
+            _mockService.Verify(s => s.RetrieveMultiple(It.IsAny<QueryExpression>()), Times.Once);
+        }
+
+        [Fact]
+        public void UpdateEntity_ShouldInvokeServiceUpdate()
+        {
+            // Arrange
+            var account = new Account { Id = Guid.NewGuid(), Name = "Updated Account" };
+
+            // Act
+            
+            EarlyBoundDataverseApiService.UpdateEntity(account, updateAccountAction);
+
+            // Assert
+            _mockService.Verify(s => s.Update(It.IsAny<Entity>()), Times.Once);
+        }
+
+        [Fact]
+        public void DeleteEntity_ShouldInvokeServiceDelete()
+        {
+            // Arrange
+            var accountId = Guid.NewGuid();
+
+            // Act
+            EarlyBoundDataverseApiService.DeleteEntity<Account>(accountId);
+
+            // Assert
+            _mockService.Verify(s => s.Delete("account", accountId), Times.Once);
+        }
     }
 }

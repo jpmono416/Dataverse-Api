@@ -2,6 +2,7 @@
 using Dataverse_api.Entities;
 using Dataverse_api.Util;
 using Dataverse_api.View;
+using Microsoft.PowerPlatform.Dataverse.Client;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 
@@ -16,7 +17,19 @@ namespace Dataverse_api.Service;
 public static class EarlyBoundDataverseApiService
 {
     // This can be changed to use an OAuth connection string from the Constants class
-    private static readonly IOrganizationService Service = Utils.GetOrganizationService(Constants.ClientSecretConnectionString);
+    private static IOrganizationService _service;
+
+    static EarlyBoundDataverseApiService()
+    {
+        // Default behavior
+        _service = Utils.GetOrganizationService(Constants.ClientSecretConnectionString);
+    }
+    
+    public static void Initialize(IOrganizationService service)
+    {
+        // Dependency injection (for tests or alternative configurations)
+        _service = service;
+    }
     
     /// <summary>
     /// Creates a new entity of the specified type in Dataverse.
@@ -24,7 +37,7 @@ public static class EarlyBoundDataverseApiService
     /// <typeparam name="T">The type of the entity to create. Must inherit from <see cref="Entity"/>.</typeparam>
     /// <param name="entity">The entity to create.</param>
     /// <returns>The unique identifier (ID) of the created entity.</returns>
-    public static Guid CreateEntity<T>(T entity) where T : Entity => Service.Create(entity);
+    public static Guid CreateEntity<T>(T entity) where T : Entity => _service.Create(entity);
 
     /// <summary>
     /// Retrieves an entity by its ID from Dataverse.
@@ -33,10 +46,10 @@ public static class EarlyBoundDataverseApiService
     /// <param name="entityId">The unique identifier (ID) of the entity to retrieve.</param>
     /// <returns>The retrieved entity, cast to the specified type.</returns>
     public static T GetEntityById<T>(Guid entityId) where T : Entity => 
-        Service.Retrieve(typeof(T).Name.ToLower(), entityId, new ColumnSet(true)).ToEntity<T>();
+        _service.Retrieve(typeof(T).Name.ToLower(), entityId, new ColumnSet(true)).ToEntity<T>();
 
     public static List<T> GetAllEntities<T>() where T : Entity =>
-        Service.RetrieveMultiple(new QueryExpression(typeof(T).Name.ToLower()){ ColumnSet = new ColumnSet(true) })
+        _service.RetrieveMultiple(new QueryExpression(typeof(T).Name.ToLower()){ ColumnSet = new ColumnSet(true) })
             .Entities.Select(e => e.ToEntity<T>()).ToList();
 
     /// <summary>
@@ -48,7 +61,7 @@ public static class EarlyBoundDataverseApiService
     public static void UpdateEntity<T>(T entity, Action<T> updateAction) where T : Entity
     {
         updateAction(entity);
-        Service.Update(entity);
+        _service.Update(entity);
     }
 
     /// <summary>
@@ -56,6 +69,6 @@ public static class EarlyBoundDataverseApiService
     /// </summary>
     /// <typeparam name="T">The type of the entity to delete. Must inherit from <see cref="Entity"/>.</typeparam>
     /// <param name="entityId">The unique identifier (ID) of the entity to delete.</param>
-    public static void DeleteEntity<T>(Guid entityId) where T : Entity => Service.Delete(typeof(T).Name.ToLower(), entityId);
+    public static void DeleteEntity<T>(Guid entityId) where T : Entity => _service.Delete(typeof(T).Name.ToLower(), entityId);
 
 }
